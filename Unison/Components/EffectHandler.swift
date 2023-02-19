@@ -13,5 +13,5 @@ protocol Effect {
 
 enum EffectResult<State, Result> {
     case noChange
-    case result(state: State, result: Result)
+    case result(result: Result)
 }

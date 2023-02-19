@@ -73,26 +73,29 @@ private final class Unison<S, U: Update, EV, H: EffectHandler>: ObservableObject
         case .noChange:
             break
         case .newState(let state):
-            DispatchQueue.main.async { [weak self] in
-                self?.state = state
-            }
+            self.update(state)
         case .dispatchEffect(let state, let effect):
+            self.update(state)
+            
             // synchronise tasks?
             // keep track of tasks and cancel them on view disappear
             Task {
-                let newState = await effectHandler.handle(effect, with: state)
+                let effectResult = await effectHandler.handle(effect, with: state)
                 
-                switch newState {
+                switch effectResult {
                 case .noChange:
                     break
-                case .result(let state, let result):
-                    // TODO: which state should be used for the Update?
-                    // - state of the side effect
-                    // - current state
+                case .result(let result):
                     let effectUpdate = self.update.handle(result: result, self.state)
                     self.didReceive(effectUpdate)
                 }
             }
+        }
+    }
+    
+    private func update(_ state: S) {
+        DispatchQueue.main.async { [weak self] in
+            self?.state = state
         }
     }
 }
