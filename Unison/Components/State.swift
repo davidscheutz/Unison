@@ -1,5 +1,5 @@
 import Foundation
 
-protocol State {
+protocol State: Equatable {
     static var initial: Self { get }
 }
