@@ -4,6 +4,10 @@ import Foundation
 
 final class ExampleUpdate: Update {
     
+    func start(_ initialState: ExampleState) -> UpdateResult<ExampleState, ExampleEffect> {
+        .dispatchEffect(state: initialState, effect: .makeAPICall)
+    }
+    
     func handle(event: ExampleEvent, _ currentState: ExampleState) -> UpdateResult<ExampleState, ExampleEffect> {
         switch event {
         case .textChanged(let text): break

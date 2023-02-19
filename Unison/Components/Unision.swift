@@ -38,7 +38,7 @@ private struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonVie
     
     var body: some View {
         viewType.init(state: unison.state, handler: unison.handle)
-            .onAppear {} // start if needed
+            .onAppear { unison.startIfNeeded() }
             .onDisappear {} // stop if needed
     }
 }
@@ -50,6 +50,7 @@ private final class Unison<S, U: Update, EV, H: EffectHandler>: ObservableObject
         
     private let update: U
     private let effectHandler: H
+    private var started = false
     
     init(
         initialState: S,
@@ -59,6 +60,12 @@ private final class Unison<S, U: Update, EV, H: EffectHandler>: ObservableObject
         state = initialState
         self.update = update
         self.effectHandler = effectHandler
+    }
+    
+    func startIfNeeded() {
+        guard !started else { return }
+        started = true
+        didReceive(update.start(state))
     }
     
     func handle(_ event: EV) {
