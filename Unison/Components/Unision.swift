@@ -43,7 +43,7 @@ private struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonVie
     }
 }
 
-private final class Unison<S, U: Update, EV, H: EffectHandler>: ObservableObject
+final class Unison<S: State, U: Update, EV, H: EffectHandler>: ObservableObject
     where U.S == S, U.EV == EV, U.EF == H.EF, H.S == S {
     
     @Published private(set) var state: S
@@ -101,6 +101,8 @@ private final class Unison<S, U: Update, EV, H: EffectHandler>: ObservableObject
     }
     
     private func update(_ state: S) {
+        guard self.state != state else { return }
+        
         DispatchQueue.main.async { [weak self] in
             self?.state = state
         }
