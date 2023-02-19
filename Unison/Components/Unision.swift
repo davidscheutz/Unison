@@ -3,18 +3,18 @@ import Combine
 import Foundation
 
 protocol UnisonView {
-    associatedtype State
-    associatedtype Event
+    associatedtype S: State
+    associatedtype EV
     
-    init(state: State, handler: @escaping (Event) -> Void)
+    init(state: S, handler: @escaping (EV) -> Void)
 }
 
 extension UnisonView where Self : View {
     static func create<U: Update, H: EffectHandler>(
-        initialState: State,
+        initialState: S = .initial,
         update: U,
         effectHandler: H
-    ) -> some View where U.S == State, H.S == U.S, U.EV == Event, U.EF == H.EF {
+    ) -> some View where U.S == S, H.S == U.S, U.EV == EV, U.EF == H.EF {
         UnisonContainerView(
             unison: Unison(initialState: initialState, update: update, effectHandler: effectHandler),
             Self.self
@@ -23,9 +23,9 @@ extension UnisonView where Self : View {
 }
 
 private struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View>: View
-    where U.S == Child.State, U.EV == Child.Event, U.EF == H.EF, U.S == H.S {
+    where U.S == Child.S, U.EV == Child.EV, U.EF == H.EF, U.S == H.S {
     
-    typealias Parent = Unison<Child.State, U, Child.Event, H>
+    typealias Parent = Unison<Child.S, U, Child.EV, H>
     
     @StateObject var unison: Parent
     
