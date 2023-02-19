@@ -12,9 +12,7 @@
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
 		B9202DB129A27ECA00BCD415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DB029A27ECA00BCD415 /* Preview Assets.xcassets */; };
 		B9202DBB29A27ECA00BCD415 /* UnisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DBA29A27ECA00BCD415 /* UnisonTests.swift */; };
-		B9A49A9229A286DE00D3BD83 /* StatePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9129A286DE00D3BD83 /* StatePublisher.swift */; };
 		B9A49A9429A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9329A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift */; };
-		B9A49A9729A288B600D3BD83 /* StateObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9629A288B600D3BD83 /* StateObservableObject.swift */; };
 		B9A49A9929A28BBB00D3BD83 /* Unision.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9829A28BBB00D3BD83 /* Unision.swift */; };
 		B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */; };
 		B9A49A9D29A28DB900D3BD83 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9C29A28DB900D3BD83 /* Update.swift */; };
@@ -44,9 +42,7 @@
 		B9202DB029A27ECA00BCD415 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9202DB629A27ECA00BCD415 /* UnisonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9202DBA29A27ECA00BCD415 /* UnisonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonTests.swift; sourceTree = "<group>"; };
-		B9A49A9129A286DE00D3BD83 /* StatePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePublisher.swift; sourceTree = "<group>"; };
 		B9A49A9329A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ReceiveOnMain.swift"; sourceTree = "<group>"; };
-		B9A49A9629A288B600D3BD83 /* StateObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObservableObject.swift; sourceTree = "<group>"; };
 		B9A49A9829A28BBB00D3BD83 /* Unision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unision.swift; sourceTree = "<group>"; };
 		B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUpdate.swift; sourceTree = "<group>"; };
 		B9A49A9C29A28DB900D3BD83 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
@@ -127,8 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				B9A49A9529A2887400D3BD83 /* Helper */,
-				B9A49A9129A286DE00D3BD83 /* StatePublisher.swift */,
-				B9A49A9629A288B600D3BD83 /* StateObservableObject.swift */,
 				B9A49A9C29A28DB900D3BD83 /* Update.swift */,
 				B9A49AA229A2A09400D3BD83 /* Effect.swift */,
 				B9A49A9829A28BBB00D3BD83 /* Unision.swift */,
@@ -267,8 +261,6 @@
 				B9F9B25C29A27FAA00FC1127 /* ExampleViewEvent.swift in Sources */,
 				B9A49AA329A2A09400D3BD83 /* Effect.swift in Sources */,
 				B9F9B25A29A27F9700FC1127 /* ExampleView.swift in Sources */,
-				B9A49A9729A288B600D3BD83 /* StateObservableObject.swift in Sources */,
-				B9A49A9229A286DE00D3BD83 /* StatePublisher.swift in Sources */,
 				B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */,
 				B9A49A9F29A28E9100D3BD83 /* ExampleEffect.swift in Sources */,
 			);

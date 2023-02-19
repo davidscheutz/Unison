@@ -18,42 +18,6 @@ struct ExampleView: View, UnisonView {
     }
 }
 
-// ------------- Alternatives ------------- //
-
-struct ExampleView_Publisher: View {
-    
-    @State private var state: ExampleState
-    
-    private let handler: (ExampleEvent) -> Void
-    private let statePublisher: AnyPublisher<ExampleState, Never>
-    
-    init(source: StatePublisher<ExampleState>, handler: @escaping (ExampleEvent) -> Void) {
-        _state = .init(initialValue: source.value)
-        statePublisher = source.eraseToAnyPublisher()
-        self.handler = handler
-    }
-    
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct ExampleView_Observable: View {
-    
-    @StateObject private var state: StateObservableObject<ExampleState>
-    
-    private let handler: (ExampleEvent) -> Void
-    
-    init(source: StateObservableObject<ExampleState>, handler: @escaping (ExampleEvent) -> Void) {
-        _state = .init(wrappedValue: source)
-        self.handler = handler
-    }
-    
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
 #if DEBUG
 struct ExampleView_Previews: PreviewProvider {
 
