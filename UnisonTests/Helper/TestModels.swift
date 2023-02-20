@@ -1,6 +1,6 @@
 @testable import Unison
 
-struct TestState: State {
+struct TestState: Equatable {
     let value1: String
     let value2: Bool
     let value3: Int

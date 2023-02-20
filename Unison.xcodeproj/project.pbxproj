@@ -19,7 +19,7 @@
 		B9A49A9F29A28E9100D3BD83 /* ExampleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9E29A28E9100D3BD83 /* ExampleEffect.swift */; };
 		B9A49AA129A2A00A00D3BD83 /* ExampleEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */; };
 		B9A49AA329A2A09400D3BD83 /* EffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA229A2A09400D3BD83 /* EffectHandler.swift */; };
-		B9A49AA529A2D3CE00D3BD83 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA429A2D3CE00D3BD83 /* State.swift */; };
+		B9A49AA529A2D3CE00D3BD83 /* InitialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA429A2D3CE00D3BD83 /* InitialState.swift */; };
 		B9A49AA829A2D86B00D3BD83 /* TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA729A2D86B00D3BD83 /* TestModels.swift */; };
 		B9A49AAA29A2D89600D3BD83 /* TestUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA929A2D89600D3BD83 /* TestUpdate.swift */; };
 		B9A49AAC29A2D8A000D3BD83 /* TestEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AAB29A2D8A000D3BD83 /* TestEffectHandler.swift */; };
@@ -54,7 +54,7 @@
 		B9A49A9E29A28E9100D3BD83 /* ExampleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEffect.swift; sourceTree = "<group>"; };
 		B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEffectHandler.swift; sourceTree = "<group>"; };
 		B9A49AA229A2A09400D3BD83 /* EffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectHandler.swift; sourceTree = "<group>"; };
-		B9A49AA429A2D3CE00D3BD83 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		B9A49AA429A2D3CE00D3BD83 /* InitialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialState.swift; sourceTree = "<group>"; };
 		B9A49AA729A2D86B00D3BD83 /* TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
 		B9A49AA929A2D89600D3BD83 /* TestUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdate.swift; sourceTree = "<group>"; };
 		B9A49AAB29A2D8A000D3BD83 /* TestEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEffectHandler.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B9A49A9529A2887400D3BD83 /* Helper */,
-				B9A49AA429A2D3CE00D3BD83 /* State.swift */,
+				B9A49AA429A2D3CE00D3BD83 /* InitialState.swift */,
 				B9A49A9C29A28DB900D3BD83 /* Update.swift */,
 				B9A49AA229A2A09400D3BD83 /* EffectHandler.swift */,
 				B9A49A9829A28BBB00D3BD83 /* Unision.swift */,
@@ -283,7 +283,7 @@
 				B9F9B25E29A2801100FC1127 /* ExampleState.swift in Sources */,
 				B9F9B25C29A27FAA00FC1127 /* ExampleViewEvent.swift in Sources */,
 				B9A49AA329A2A09400D3BD83 /* EffectHandler.swift in Sources */,
-				B9A49AA529A2D3CE00D3BD83 /* State.swift in Sources */,
+				B9A49AA529A2D3CE00D3BD83 /* InitialState.swift in Sources */,
 				B9F9B25A29A27F9700FC1127 /* ExampleView.swift in Sources */,
 				B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */,
 				B9A49A9F29A28E9100D3BD83 /* ExampleEffect.swift in Sources */,

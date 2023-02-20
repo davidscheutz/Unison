@@ -3,18 +3,29 @@ import Combine
 import Foundation
 
 protocol UnisonView {
-    associatedtype S: State
-    associatedtype EV
+    associatedtype State: Equatable
+    associatedtype Event
     
-    init(state: S, handler: @escaping (EV) -> Void)
+    init(state: State, handler: @escaping (Event) -> Void)
 }
 
 extension UnisonView where Self : View {
     static func create<U: Update, H: EffectHandler>(
-        initialState: S = .initial,
         update: U,
         effectHandler: H
-    ) -> some View where U.S == S, H.S == U.S, U.EV == EV, U.EF == H.EF {
+    ) -> some View where State : InitialState, U.S == State, H.S == U.S, U.EV == Event, U.EF == H.EF {
+        create(
+            initialState: .initial,
+            update: update,
+            effectHandler: effectHandler
+        )
+    }
+    
+    static func create<U: Update, H: EffectHandler>(
+        initialState: State,
+        update: U,
+        effectHandler: H
+    ) -> some View where U.S == State, H.S == U.S, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
             unison: Unison(initialState: initialState, update: update, effectHandler: effectHandler),
             Self.self
@@ -23,9 +34,9 @@ extension UnisonView where Self : View {
 }
 
 struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View>: View
-    where U.S == Child.S, U.EV == Child.EV, U.EF == H.EF, U.S == H.S {
+    where U.S == Child.State, U.EV == Child.Event, U.EF == H.EF, U.S == H.S {
     
-    typealias Parent = Unison<Child.S, U, Child.EV, H>
+    typealias Parent = Unison<Child.State, U, Child.Event, H>
     
     @StateObject var unison: Parent
     
@@ -43,7 +54,7 @@ struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View
     }
 }
 
-final class Unison<S: State, U: Update, EV, H: EffectHandler>: ObservableObject
+final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObject
     where U.S == S, U.EV == EV, U.EF == H.EF, H.S == S {
     
     @Published private(set) var state: S

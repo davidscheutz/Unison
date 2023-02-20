@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExampleState: State {
+struct ExampleState: InitialState {
     let input: String
     let isButtonActive: Bool
     let isLoading: Bool
