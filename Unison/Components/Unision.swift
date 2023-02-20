@@ -22,7 +22,7 @@ extension UnisonView where Self : View {
     }
 }
 
-private struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View>: View
+struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View>: View
     where U.S == Child.S, U.EV == Child.EV, U.EF == H.EF, U.S == H.S {
     
     typealias Parent = Unison<Child.S, U, Child.EV, H>
@@ -103,8 +103,14 @@ final class Unison<S: State, U: Update, EV, H: EffectHandler>: ObservableObject
     private func update(_ state: S) {
         guard self.state != state else { return }
         
-        DispatchQueue.main.async { [weak self] in
+        let update = { [weak self] in
             self?.state = state
+        }
+        
+        if Thread.isMainThread {
+            update()
+        } else {
+            DispatchQueue.main.async { update() }
         }
     }
 }

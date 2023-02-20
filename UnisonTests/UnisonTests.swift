@@ -1,36 +1,103 @@
-//
-//  UnisonTests.swift
-//  UnisonTests
-//
-//  Created by David's MBP16 on 19.02.23.
-//
-
 import XCTest
 @testable import Unison
 
 final class UnisonTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    typealias Sut = Unison<TestState, TestUpdate, TestEvent, TestEffectHandler>
+    
+    var update: TestUpdate!
+    var effectHandler: TestEffectHandler!
+    var spy: ValueSpy<TestState>!
+    
+    func test_initialState() {
+        let sut = createSut()
+        
+        setupSpy(fulfillmentCount: 1, sut: sut)
+        
+        XCTAssertEqual(spy.values, [.initial])
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_initialEffect() {
+        let sut = createSut()
+        
+        update.initialEffect = .asyncWork
+        effectHandler.result = .success
+        
+        setupSpy(fulfillmentCount: 2, sut: sut)
+        
+        spy.wait()
+        
+        XCTAssertEqual(spy.values, [.initial, .initial.copy(asyncResult: .success)])
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_update() {
+        let sut = createSut()
+        
+        let expected: [TestState] = [
+            .initial,
+            .initial.copy(value1: .input),
+            .initial.copy(value1: .input, value2: true),
+            .initial.copy(value1: .input, value2: true, value3: 1),
+            .initial.copy(value1: .input, value2: false, value3: 1),
+            .initial.copy(value1: .input, value2: false, value3: 2),
+            .initial.copy(value1: .input, value2: false, value3: 1)
+        ]
+        
+        setupSpy(fulfillmentCount: expected.count, sut: sut)
+        
+        sut.handle(.changeValue1(input: .input))
+        sut.handle(.toggleValue2)
+        sut.handle(.increaseValue3)
+        sut.handle(.toggleValue2)
+        sut.handle(.increaseValue3)
+        sut.handle(.decreaseValue3)
+        
+        XCTAssertEqual(spy.values, expected)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_effectResultDispatchAnotherEffect() {
+        let sut = createSut()
+        
+        effectHandler.shouldRetry = true
+        effectHandler.error = .error
+        
+        XCTAssertTrue(effectHandler.shouldRetry)
+        
+        setupSpy(fulfillmentCount: 2, sut: sut)
+        
+        sut.handle(.asyncWork)
+        
+        spy.wait()
+        
+        XCTAssertEqual(spy.values, [.initial, .initial.copy(asyncError: .error)])
+        XCTAssertFalse(effectHandler.shouldRetry)
     }
+    
+    // test UI events are dispatched on UI thread
+    
+    // event order (define - missing clarity!)
+    
+    // MARK: - Helper
+    
+    private func createSut() -> Sut {
+        update = TestUpdate()
+        effectHandler = TestEffectHandler()
+        
+        return Unison(
+            initialState: .initial,
+            update: update,
+            effectHandler: effectHandler
+        )
+    }
+    
+    private func setupSpy(fulfillmentCount: Int, sut: Sut) {
+        spy = .init(sut.$state.eraseToAnyPublisher(), fulfillmentCount: fulfillmentCount, self)
+        sut.startIfNeeded()
+    }
+}
 
+extension String {
+    static let input = "Input"
+    static let success = "Success"
+    static let error = "Error"
 }
