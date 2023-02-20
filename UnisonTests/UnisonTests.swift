@@ -82,6 +82,44 @@ final class UnisonTests: XCTestCase {
         XCTAssertFalse(effectHandler.shouldRetry)
     }
     
+    func test_updateDuringLongRunningEffect() {
+        let sut = createSut()
+        
+        effectHandler.asyncWorkDuration = 0.01
+        effectHandler.result = .success
+        
+        setupSpy(fulfillmentCount: 3, sut: sut)
+        
+        sut.handle(.asyncWork)
+        sut.handle(.increaseValue3)
+        
+        spy.wait()
+        
+        XCTAssertEqual(spy.values, [.initial, .initial.copy(value3: 1), .initial.copy(value3: 1, asyncResult: .success)])
+        XCTAssertEqual(update.receivedEvents, [.asyncWork, .increaseValue3])
+        XCTAssertEqual(effectHandler.receivedEffects, [.asyncWork])
+    }
+    
+    func test_deallocation() {
+        let sut = createSut()
+        sut.startIfNeeded()
+        
+        effectHandler.asyncWorkDuration = 1 // second
+        effectHandler.result = .success
+        
+        sut.handle(.increaseValue3)
+        sut.handle(.asyncWork)
+
+        sut.stopIfNeeded()
+        
+        // tasks aren't cancelled immediately
+        wait(timeout: 0.05)
+        
+        addTeardownBlock { [weak sut] in
+            XCTAssertNil(sut)
+        }
+    }
+    
     // test UI events are dispatched on UI thread
     
     // event order (define - missing clarity!)

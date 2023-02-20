@@ -23,7 +23,7 @@ class ValueSpy<T> {
         }
     }
     
-    func wait(timeout: Double = 0.01) {
+    func wait(timeout: Double = 0.05) {
         test.wait(for: [expectation], timeout: timeout)
     }
 }

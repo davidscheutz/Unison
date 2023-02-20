@@ -50,7 +50,7 @@ struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View
     var body: some View {
         viewType.init(state: unison.state, handler: unison.handle)
             .onAppear { unison.startIfNeeded() }
-            .onDisappear {} // stop if needed
+            .onDisappear { unison.stopIfNeeded() }
     }
 }
 
@@ -62,6 +62,7 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
     private let update: U
     private let effectHandler: H
     private var started = false
+    private var runningTasks = [Task<Void, Never>]()
     
     init(
         initialState: S,
@@ -79,6 +80,11 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
         didReceive(update.start(state))
     }
     
+    func stopIfNeeded() {
+        runningTasks.forEach { $0.cancel() }
+        runningTasks.removeAll()
+    }
+    
     func handle(_ event: EV) {
         let updateResult = update.handle(event: event, state)
         didReceive(updateResult)
@@ -91,23 +97,25 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
         case .noChange:
             break
         case .newState(let state):
-            self.update(state)
+            update(state)
         case .dispatchEffect(let state, let effect):
-            self.update(state)
+            update(state)
             
-            // synchronise tasks?
-            // keep track of tasks and cancel them on view disappear
-            Task {
+            let task = Task { [weak self] in
                 let effectResult = await effectHandler.handle(effect, with: state)
                 
                 switch effectResult {
                 case .noChange:
                     break
                 case .result(let result):
+                    guard let self = self else { return }
+
                     let effectUpdate = self.update.handle(result: result, self.state)
                     self.didReceive(effectUpdate)
                 }
             }
+            
+            runningTasks.append(task)
         }
     }
     
