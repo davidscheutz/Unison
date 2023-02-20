@@ -15,6 +15,8 @@ final class UnisonTests: XCTestCase {
         setupSpy(fulfillmentCount: 1, sut: sut)
         
         XCTAssertEqual(spy.values, [.initial])
+        XCTAssertTrue(effectHandler.receivedEffects.isEmpty)
+        XCTAssertTrue(update.receivedEvents.isEmpty)
     }
     
     func test_initialEffect() {
@@ -28,10 +30,24 @@ final class UnisonTests: XCTestCase {
         spy.wait()
         
         XCTAssertEqual(spy.values, [.initial, .initial.copy(asyncResult: .success)])
+        XCTAssertEqual(effectHandler.receivedEffects, [.asyncWork])
     }
     
     func test_update() {
         let sut = createSut()
+        
+        let events: [TestEvent] = [
+            .changeValue1(input: .input),
+            .toggleValue2,
+            .increaseValue3,
+            .toggleValue2,
+            .increaseValue3,
+            .decreaseValue3
+        ]
+        
+        setupSpy(fulfillmentCount: events.count, sut: sut)
+        
+        events.forEach { sut.handle($0) }
         
         let expected: [TestState] = [
             .initial,
@@ -43,15 +59,7 @@ final class UnisonTests: XCTestCase {
             .initial.copy(value1: .input, value2: false, value3: 1)
         ]
         
-        setupSpy(fulfillmentCount: expected.count, sut: sut)
-        
-        sut.handle(.changeValue1(input: .input))
-        sut.handle(.toggleValue2)
-        sut.handle(.increaseValue3)
-        sut.handle(.toggleValue2)
-        sut.handle(.increaseValue3)
-        sut.handle(.decreaseValue3)
-        
+        XCTAssertEqual(update.receivedEvents, events)
         XCTAssertEqual(spy.values, expected)
     }
     
@@ -70,6 +78,7 @@ final class UnisonTests: XCTestCase {
         spy.wait()
         
         XCTAssertEqual(spy.values, [.initial, .initial.copy(asyncError: .error)])
+        XCTAssertEqual(effectHandler.receivedEffects, [.asyncWork, .asyncWork])
         XCTAssertFalse(effectHandler.shouldRetry)
     }
     

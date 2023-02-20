@@ -5,7 +5,7 @@ class TestUpdate: Update {
     
     // Test config
     var initialEffect: TestEffect?
-    
+    var receivedEvents = [TestEvent]()
     
     func start(_ initialState: TestState) -> UpdateResult<TestState, TestEffect> {
         if let initialEffect = initialEffect {
@@ -16,6 +16,8 @@ class TestUpdate: Update {
     }
     
     func handle(event: TestEvent, _ currentState: TestState) -> UpdateResult<TestState, TestEffect> {
+        receivedEvents.append(event)
+        
         switch event {
         case .changeValue1(let input):
             return .newState(state: currentState.copy(value1: input))

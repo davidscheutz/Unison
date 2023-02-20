@@ -22,7 +22,7 @@ extension TestState {
     }
 }
 
-enum TestEvent {
+enum TestEvent: Equatable {
     case changeValue1(input: String)
     case toggleValue2
     case increaseValue3

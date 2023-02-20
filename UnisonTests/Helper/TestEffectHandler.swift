@@ -7,8 +7,11 @@ class TestEffectHandler: EffectHandler {
     var result: String?
     var error: String?
     var shouldRetry = false
+    var receivedEffects = [TestEffect]()
     
     func handle(_ effect: TestEffect, with state: TestState) async -> EffectResult<TestState, TestEffect.Result> {
+        receivedEffects.append(effect)
+        
         switch effect {
         case .asyncWork:
             if shouldRetry {
