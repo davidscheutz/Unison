@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/davidscheutz/Projects/DSC/Unison-Concept/Unison.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

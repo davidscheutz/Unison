@@ -1,4 +1,4 @@
-@testable import Unison
+import Unison
 import Foundation
 
 class TestEffectHandler: EffectHandler {

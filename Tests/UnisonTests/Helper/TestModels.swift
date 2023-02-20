@@ -1,4 +1,4 @@
-@testable import Unison
+import Unison
 
 struct TestState: Equatable {
     let value1: String

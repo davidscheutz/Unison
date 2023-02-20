@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import Foundation
 
-protocol UnisonView {
+public protocol UnisonView {
     associatedtype State: Equatable
     associatedtype Event
     
@@ -10,7 +10,7 @@ protocol UnisonView {
 }
 
 extension UnisonView where Self : View {
-    static func create<U: Update, H: EffectHandler>(
+    public static func create<U: Update, H: EffectHandler>(
         update: U,
         effectHandler: H
     ) -> some View where State : InitialState, U.S == State, H.S == U.S, U.EV == Event, U.EF == H.EF {
@@ -21,7 +21,7 @@ extension UnisonView where Self : View {
         )
     }
     
-    static func create<U: Update, H: EffectHandler>(
+    public static func create<U: Update, H: EffectHandler>(
         initialState: State,
         update: U,
         effectHandler: H

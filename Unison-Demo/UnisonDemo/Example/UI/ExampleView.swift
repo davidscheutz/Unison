@@ -1,12 +1,5 @@
-//
-//  ExampleView.swift
-//  Unison
-//
-//  Created by David's MBP16 on 19.02.23.
-//
-
 import SwiftUI
-import Combine
+import Unison
 
 struct ExampleView: View, UnisonView {
     

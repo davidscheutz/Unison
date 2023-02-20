@@ -7,62 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B909B6BD29A41BD900F68A3E /* Unison in Frameworks */ = {isa = PBXBuildFile; productRef = B909B6BC29A41BD900F68A3E /* Unison */; };
 		B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DA929A27EC800BCD415 /* UnisonApp.swift */; };
 		B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DAB29A27EC800BCD415 /* ContentView.swift */; };
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
-		B9202DB129A27ECA00BCD415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DB029A27ECA00BCD415 /* Preview Assets.xcassets */; };
-		B9202DBB29A27ECA00BCD415 /* UnisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DBA29A27ECA00BCD415 /* UnisonTests.swift */; };
-		B9A49A9429A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9329A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift */; };
-		B9A49A9929A28BBB00D3BD83 /* Unision.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9829A28BBB00D3BD83 /* Unision.swift */; };
 		B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */; };
-		B9A49A9D29A28DB900D3BD83 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9C29A28DB900D3BD83 /* Update.swift */; };
-		B9A49A9F29A28E9100D3BD83 /* ExampleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9E29A28E9100D3BD83 /* ExampleEffect.swift */; };
 		B9A49AA129A2A00A00D3BD83 /* ExampleEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */; };
-		B9A49AA329A2A09400D3BD83 /* EffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA229A2A09400D3BD83 /* EffectHandler.swift */; };
-		B9A49AA529A2D3CE00D3BD83 /* InitialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA429A2D3CE00D3BD83 /* InitialState.swift */; };
-		B9A49AA829A2D86B00D3BD83 /* TestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA729A2D86B00D3BD83 /* TestModels.swift */; };
-		B9A49AAA29A2D89600D3BD83 /* TestUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA929A2D89600D3BD83 /* TestUpdate.swift */; };
-		B9A49AAC29A2D8A000D3BD83 /* TestEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AAB29A2D8A000D3BD83 /* TestEffectHandler.swift */; };
-		B9A49AAE29A2DE5B00D3BD83 /* ValueSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AAD29A2DE5B00D3BD83 /* ValueSpy.swift */; };
-		B9A49AB029A3C55500D3BD83 /* Test+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AAF29A3C55500D3BD83 /* Test+Wait.swift */; };
 		B9F9B25A29A27F9700FC1127 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B25929A27F9700FC1127 /* ExampleView.swift */; };
-		B9F9B25C29A27FAA00FC1127 /* ExampleViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B25B29A27FAA00FC1127 /* ExampleViewEvent.swift */; };
 		B9F9B25E29A2801100FC1127 /* ExampleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B25D29A2801100FC1127 /* ExampleState.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B9202DB729A27ECA00BCD415 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9202D9E29A27EC800BCD415 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9202DA529A27EC800BCD415;
-			remoteInfo = Unison;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		B9202DA629A27EC800BCD415 /* Unison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unison.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B909B6BA29A41B9400F68A3E /* Unison */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Unison; path = ..; sourceTree = "<group>"; };
+		B9202DA629A27EC800BCD415 /* UnisonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnisonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9202DA929A27EC800BCD415 /* UnisonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonApp.swift; sourceTree = "<group>"; };
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B9202DB029A27ECA00BCD415 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B9202DB629A27ECA00BCD415 /* UnisonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9202DBA29A27ECA00BCD415 /* UnisonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonTests.swift; sourceTree = "<group>"; };
-		B9A49A9329A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ReceiveOnMain.swift"; sourceTree = "<group>"; };
-		B9A49A9829A28BBB00D3BD83 /* Unision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unision.swift; sourceTree = "<group>"; };
 		B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUpdate.swift; sourceTree = "<group>"; };
-		B9A49A9C29A28DB900D3BD83 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
-		B9A49A9E29A28E9100D3BD83 /* ExampleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEffect.swift; sourceTree = "<group>"; };
 		B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEffectHandler.swift; sourceTree = "<group>"; };
-		B9A49AA229A2A09400D3BD83 /* EffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectHandler.swift; sourceTree = "<group>"; };
-		B9A49AA429A2D3CE00D3BD83 /* InitialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialState.swift; sourceTree = "<group>"; };
-		B9A49AA729A2D86B00D3BD83 /* TestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModels.swift; sourceTree = "<group>"; };
-		B9A49AA929A2D89600D3BD83 /* TestUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdate.swift; sourceTree = "<group>"; };
-		B9A49AAB29A2D8A000D3BD83 /* TestEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEffectHandler.swift; sourceTree = "<group>"; };
-		B9A49AAD29A2DE5B00D3BD83 /* ValueSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueSpy.swift; sourceTree = "<group>"; };
-		B9A49AAF29A3C55500D3BD83 /* Test+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test+Wait.swift"; sourceTree = "<group>"; };
 		B9F9B25929A27F9700FC1127 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
-		B9F9B25B29A27FAA00FC1127 /* ExampleViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewEvent.swift; sourceTree = "<group>"; };
 		B9F9B25D29A2801100FC1127 /* ExampleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,118 +34,98 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9202DB329A27ECA00BCD415 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B909B6BD29A41BD900F68A3E /* Unison in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B909B6B929A41B9400F68A3E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B909B6BA29A41B9400F68A3E /* Unison */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		B909B6BB29A41BD900F68A3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9202D9D29A27EC800BCD415 = {
 			isa = PBXGroup;
 			children = (
-				B9202DA829A27EC800BCD415 /* Unison */,
-				B9202DB929A27ECA00BCD415 /* UnisonTests */,
+				B909B6B929A41B9400F68A3E /* Packages */,
+				B9202DA829A27EC800BCD415 /* UnisonDemo */,
 				B9202DA729A27EC800BCD415 /* Products */,
+				B909B6BB29A41BD900F68A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B9202DA729A27EC800BCD415 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B9202DA629A27EC800BCD415 /* Unison.app */,
-				B9202DB629A27ECA00BCD415 /* UnisonTests.xctest */,
+				B9202DA629A27EC800BCD415 /* UnisonDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9202DA829A27EC800BCD415 /* Unison */ = {
+		B9202DA829A27EC800BCD415 /* UnisonDemo */ = {
 			isa = PBXGroup;
 			children = (
 				B9202DA929A27EC800BCD415 /* UnisonApp.swift */,
 				B9202DAB29A27EC800BCD415 /* ContentView.swift */,
 				B9202DD429A27F4500BCD415 /* Example */,
-				B9202DD329A27F3D00BCD415 /* Components */,
 				B9202DAD29A27ECA00BCD415 /* Assets.xcassets */,
-				B9202DAF29A27ECA00BCD415 /* Preview Content */,
 			);
-			path = Unison;
-			sourceTree = "<group>";
-		};
-		B9202DAF29A27ECA00BCD415 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B9202DB029A27ECA00BCD415 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B9202DB929A27ECA00BCD415 /* UnisonTests */ = {
-			isa = PBXGroup;
-			children = (
-				B9202DBA29A27ECA00BCD415 /* UnisonTests.swift */,
-				B9A49AA629A2D7CB00D3BD83 /* Helper */,
-			);
-			path = UnisonTests;
-			sourceTree = "<group>";
-		};
-		B9202DD329A27F3D00BCD415 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				B9A49A9529A2887400D3BD83 /* Helper */,
-				B9A49AA429A2D3CE00D3BD83 /* InitialState.swift */,
-				B9A49A9C29A28DB900D3BD83 /* Update.swift */,
-				B9A49AA229A2A09400D3BD83 /* EffectHandler.swift */,
-				B9A49A9829A28BBB00D3BD83 /* Unision.swift */,
-			);
-			path = Components;
+			path = UnisonDemo;
 			sourceTree = "<group>";
 		};
 		B9202DD429A27F4500BCD415 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				B9F9B25D29A2801100FC1127 /* ExampleState.swift */,
-				B9F9B25B29A27FAA00FC1127 /* ExampleViewEvent.swift */,
-				B9A49A9E29A28E9100D3BD83 /* ExampleEffect.swift */,
-				B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */,
-				B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */,
-				B9F9B25929A27F9700FC1127 /* ExampleView.swift */,
+				B9A49AB329A418A200D3BD83 /* Model */,
+				B9A49AB429A418A800D3BD83 /* Logic */,
+				B9A49AB229A4189D00D3BD83 /* UI */,
 			);
 			path = Example;
 			sourceTree = "<group>";
 		};
-		B9A49A9529A2887400D3BD83 /* Helper */ = {
+		B9A49AB229A4189D00D3BD83 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B9A49A9329A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift */,
+				B9F9B25929A27F9700FC1127 /* ExampleView.swift */,
 			);
-			path = Helper;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		B9A49AA629A2D7CB00D3BD83 /* Helper */ = {
+		B9A49AB329A418A200D3BD83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B9A49AA729A2D86B00D3BD83 /* TestModels.swift */,
-				B9A49AA929A2D89600D3BD83 /* TestUpdate.swift */,
-				B9A49AAB29A2D8A000D3BD83 /* TestEffectHandler.swift */,
-				B9A49AAD29A2DE5B00D3BD83 /* ValueSpy.swift */,
-				B9A49AAF29A3C55500D3BD83 /* Test+Wait.swift */,
+				B9F9B25D29A2801100FC1127 /* ExampleState.swift */,
 			);
-			path = Helper;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B9A49AB429A418A800D3BD83 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */,
+				B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B9202DA529A27EC800BCD415 /* Unison */ = {
+		B9202DA529A27EC800BCD415 /* UnisonDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9202DCA29A27ECA00BCD415 /* Build configuration list for PBXNativeTarget "Unison" */;
+			buildConfigurationList = B9202DCA29A27ECA00BCD415 /* Build configuration list for PBXNativeTarget "UnisonDemo" */;
 			buildPhases = (
 				B9202DA229A27EC800BCD415 /* Sources */,
 				B9202DA329A27EC800BCD415 /* Frameworks */,
@@ -192,28 +135,13 @@
 			);
 			dependencies = (
 			);
-			name = Unison;
+			name = UnisonDemo;
+			packageProductDependencies = (
+				B909B6BC29A41BD900F68A3E /* Unison */,
+			);
 			productName = Unison;
-			productReference = B9202DA629A27EC800BCD415 /* Unison.app */;
+			productReference = B9202DA629A27EC800BCD415 /* UnisonDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B9202DB529A27ECA00BCD415 /* UnisonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9202DCD29A27ECA00BCD415 /* Build configuration list for PBXNativeTarget "UnisonTests" */;
-			buildPhases = (
-				B9202DB229A27ECA00BCD415 /* Sources */,
-				B9202DB329A27ECA00BCD415 /* Frameworks */,
-				B9202DB429A27ECA00BCD415 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B9202DB829A27ECA00BCD415 /* PBXTargetDependency */,
-			);
-			name = UnisonTests;
-			productName = UnisonTests;
-			productReference = B9202DB629A27ECA00BCD415 /* UnisonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -228,13 +156,9 @@
 					B9202DA529A27EC800BCD415 = {
 						CreatedOnToolsVersion = 14.2;
 					};
-					B9202DB529A27ECA00BCD415 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = B9202DA529A27EC800BCD415;
-					};
 				};
 			};
-			buildConfigurationList = B9202DA129A27EC800BCD415 /* Build configuration list for PBXProject "Unison" */;
+			buildConfigurationList = B9202DA129A27EC800BCD415 /* Build configuration list for PBXProject "UnisonDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,12 +167,13 @@
 				Base,
 			);
 			mainGroup = B9202D9D29A27EC800BCD415;
+			packageReferences = (
+			);
 			productRefGroup = B9202DA729A27EC800BCD415 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B9202DA529A27EC800BCD415 /* Unison */,
-				B9202DB529A27ECA00BCD415 /* UnisonTests */,
+				B9202DA529A27EC800BCD415 /* UnisonDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -258,15 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9202DB129A27ECA00BCD415 /* Preview Assets.xcassets in Resources */,
 				B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9202DB429A27ECA00BCD415 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,44 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9A49A9D29A28DB900D3BD83 /* Update.swift in Sources */,
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
 				B9A49AA129A2A00A00D3BD83 /* ExampleEffectHandler.swift in Sources */,
-				B9A49A9429A2886D00D3BD83 /* Publisher+ReceiveOnMain.swift in Sources */,
-				B9A49A9929A28BBB00D3BD83 /* Unision.swift in Sources */,
 				B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */,
 				B9F9B25E29A2801100FC1127 /* ExampleState.swift in Sources */,
-				B9F9B25C29A27FAA00FC1127 /* ExampleViewEvent.swift in Sources */,
-				B9A49AA329A2A09400D3BD83 /* EffectHandler.swift in Sources */,
-				B9A49AA529A2D3CE00D3BD83 /* InitialState.swift in Sources */,
 				B9F9B25A29A27F9700FC1127 /* ExampleView.swift in Sources */,
 				B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */,
-				B9A49A9F29A28E9100D3BD83 /* ExampleEffect.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9202DB229A27ECA00BCD415 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9202DBB29A27ECA00BCD415 /* UnisonTests.swift in Sources */,
-				B9A49AAC29A2D8A000D3BD83 /* TestEffectHandler.swift in Sources */,
-				B9A49AAE29A2DE5B00D3BD83 /* ValueSpy.swift in Sources */,
-				B9A49AA829A2D86B00D3BD83 /* TestModels.swift in Sources */,
-				B9A49AB029A3C55500D3BD83 /* Test+Wait.swift in Sources */,
-				B9A49AAA29A2D89600D3BD83 /* TestUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B9202DB829A27ECA00BCD415 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B9202DA529A27EC800BCD415 /* Unison */;
-			targetProxy = B9202DB729A27ECA00BCD415 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B9202DC829A27ECA00BCD415 /* Debug */ = {
@@ -438,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Unison/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = C5SE39MZ59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -467,7 +356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Unison/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = C5SE39MZ59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -489,50 +378,10 @@
 			};
 			name = Release;
 		};
-		B9202DCE29A27ECA00BCD415 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C5SE39MZ59;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dsc.UnisonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unison.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Unison";
-			};
-			name = Debug;
-		};
-		B9202DCF29A27ECA00BCD415 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C5SE39MZ59;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dsc.UnisonTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unison.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Unison";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B9202DA129A27EC800BCD415 /* Build configuration list for PBXProject "Unison" */ = {
+		B9202DA129A27EC800BCD415 /* Build configuration list for PBXProject "UnisonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9202DC829A27ECA00BCD415 /* Debug */,
@@ -541,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9202DCA29A27ECA00BCD415 /* Build configuration list for PBXNativeTarget "Unison" */ = {
+		B9202DCA29A27ECA00BCD415 /* Build configuration list for PBXNativeTarget "UnisonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9202DCB29A27ECA00BCD415 /* Debug */,
@@ -550,16 +399,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9202DCD29A27ECA00BCD415 /* Build configuration list for PBXNativeTarget "UnisonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9202DCE29A27ECA00BCD415 /* Debug */,
-				B9202DCF29A27ECA00BCD415 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B909B6BC29A41BD900F68A3E /* Unison */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Unison;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9202D9E29A27EC800BCD415 /* Project object */;
 }

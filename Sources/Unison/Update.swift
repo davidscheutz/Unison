@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Update {
+public protocol Update {
     associatedtype S
     associatedtype EV
     associatedtype EF: Effect
@@ -11,12 +11,12 @@ protocol Update {
 }
 
 extension Update {
-    func start(_ initialState: S) -> UpdateResult<S, EF> {
+    public func start(_ initialState: S) -> UpdateResult<S, EF> {
         .noChange
     }
 }
 
-enum UpdateResult<State, Effect> {
+public enum UpdateResult<State, Effect> {
     case noChange
     case newState(state: State)
     case dispatchEffect(state: State, effect: Effect)

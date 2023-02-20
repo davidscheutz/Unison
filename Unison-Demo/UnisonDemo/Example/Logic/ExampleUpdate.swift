@@ -1,6 +1,11 @@
 import Foundation
+import Unison
 
 // pure code (stateless, deterministic & no side effects) = easily testable
+enum ExampleEvent {
+    case buttonClicked
+    case textChanged(text: String)
+}
 
 final class ExampleUpdate: Update {
     
