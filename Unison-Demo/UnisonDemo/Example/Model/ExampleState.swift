@@ -1,7 +1,7 @@
 import Foundation
 import Unison
 
-struct ExampleState: InitialState {
+struct ExampleState: InitialState, SmartCopy {
     let input: String
     let isButtonActive: Bool
     let isLoading: Bool

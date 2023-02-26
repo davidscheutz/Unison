@@ -1,0 +1,22 @@
+// Template name: SmartCopy
+// Template version: 1.0
+
+{% for type in types.based.SmartCopy %}
+
+{% if type.variables.count > 0 %}
+extension {{ type.name }} {
+    public func copy(
+        {% for property in type.variables|instance %}
+        {{ property.name }}: {{ property.typeName }}? = nil{% ifnot forloop.last %}, {% endif %}
+        {% endfor %}
+    ) -> {{ type.name }} {
+        return {{ type.name }}(
+            {% for property in type.variables|instance %}
+            {{ property.name }}: {{ property.name }} ?? self.{{ property.name }}{% ifnot forloop.last %}, {% endif %}
+            {% endfor %}
+        )
+    }
+}
+{% endif %}
+
+{% endfor %}

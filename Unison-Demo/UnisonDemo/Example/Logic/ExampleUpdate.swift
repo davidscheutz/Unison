@@ -15,10 +15,9 @@ final class ExampleUpdate: Update {
     
     func handle(event: ExampleEvent, _ currentState: ExampleState) -> UpdateResult<ExampleState, ExampleEffect> {
         switch event {
-        case .textChanged(let text): break
+        case .textChanged(let text): return .newState(state: currentState.copy(input: text))
         case .buttonClicked: break
         }
-        
         return .noChange
     }
     
@@ -29,7 +28,6 @@ final class ExampleUpdate: Update {
         case .apiCallFailed(let error):
             break
         }
-        
         return .noChange
     }
 }

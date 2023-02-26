@@ -134,6 +134,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B969E25829AA704D008B2625 /* PBXTargetDependency */,
 			);
 			name = UnisonDemo;
 			packageProductDependencies = (
@@ -204,6 +205,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B969E25829AA704D008B2625 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B969E25729AA704D008B2625 /* CodeGeneratorPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B9202DC829A27ECA00BCD415 /* Debug */ = {
@@ -405,6 +413,10 @@
 		B909B6BC29A41BD900F68A3E /* Unison */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Unison;
+		};
+		B969E25729AA704D008B2625 /* CodeGeneratorPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:CodeGeneratorPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
