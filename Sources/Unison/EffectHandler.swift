@@ -7,7 +7,7 @@ public protocol EffectHandler {
     func handle(_ effect: EF, with state: S) async -> EffectResult<EF.Result>
 }
 
-public protocol Effect {
+public protocol Effect: Equatable {
     associatedtype Result
 }
 

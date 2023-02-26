@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol Update {
-    associatedtype S
+    associatedtype S: Equatable
     associatedtype EV
     associatedtype EF: Effect
     
@@ -16,7 +16,7 @@ extension Update {
     }
 }
 
-public enum UpdateResult<State, Effect> {
+public enum UpdateResult<State: Equatable, Effect: Equatable>: Equatable {
     case noChange
     case newState(state: State)
     case dispatchEffect(state: State, effect: Effect)
