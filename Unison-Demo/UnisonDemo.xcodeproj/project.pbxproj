@@ -11,11 +11,22 @@
 		B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DA929A27EC800BCD415 /* UnisonApp.swift */; };
 		B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DAB29A27EC800BCD415 /* ContentView.swift */; };
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
-		B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */; };
-		B9A49AA129A2A00A00D3BD83 /* ExampleEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */; };
-		B9F9B25A29A27F9700FC1127 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B25929A27F9700FC1127 /* ExampleView.swift */; };
-		B9F9B25E29A2801100FC1127 /* ExampleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9B25D29A2801100FC1127 /* ExampleState.swift */; };
+		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
+		B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */; };
+		B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */; };
+		B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E847229ABB0F5003A38A2 /* TimerViewState.swift */; };
+		B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B98E847C29ABC05B003A38A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9202D9E29A27EC800BCD415 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9202DA529A27EC800BCD415;
+			remoteInfo = UnisonDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B909B6BA29A41B9400F68A3E /* Unison */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Unison; path = ..; sourceTree = "<group>"; };
@@ -23,10 +34,12 @@
 		B9202DA929A27EC800BCD415 /* UnisonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonApp.swift; sourceTree = "<group>"; };
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUpdate.swift; sourceTree = "<group>"; };
-		B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEffectHandler.swift; sourceTree = "<group>"; };
-		B9F9B25929A27F9700FC1127 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
-		B9F9B25D29A2801100FC1127 /* ExampleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleState.swift; sourceTree = "<group>"; };
+		B98E846A29ABAAC0003A38A2 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUpdate.swift; sourceTree = "<group>"; };
+		B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEffectHandler.swift; sourceTree = "<group>"; };
+		B98E847229ABB0F5003A38A2 /* TimerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewState.swift; sourceTree = "<group>"; };
+		B98E847829ABC05B003A38A2 /* UnisonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUpdateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +48,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B909B6BD29A41BD900F68A3E /* Unison in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B98E847529ABC05B003A38A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +81,7 @@
 			children = (
 				B909B6B929A41B9400F68A3E /* Packages */,
 				B9202DA829A27EC800BCD415 /* UnisonDemo */,
+				B98E847929ABC05B003A38A2 /* UnisonDemoTests */,
 				B9202DA729A27EC800BCD415 /* Products */,
 				B909B6BB29A41BD900F68A3E /* Frameworks */,
 			);
@@ -70,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				B9202DA629A27EC800BCD415 /* UnisonDemo.app */,
+				B98E847829ABC05B003A38A2 /* UnisonDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,45 +101,37 @@
 			children = (
 				B9202DA929A27EC800BCD415 /* UnisonApp.swift */,
 				B9202DAB29A27EC800BCD415 /* ContentView.swift */,
-				B9202DD429A27F4500BCD415 /* Example */,
+				B9202DD429A27F4500BCD415 /* Examples */,
 				B9202DAD29A27ECA00BCD415 /* Assets.xcassets */,
 			);
 			path = UnisonDemo;
 			sourceTree = "<group>";
 		};
-		B9202DD429A27F4500BCD415 /* Example */ = {
+		B9202DD429A27F4500BCD415 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				B9A49AB329A418A200D3BD83 /* Model */,
-				B9A49AB429A418A800D3BD83 /* Logic */,
-				B9A49AB229A4189D00D3BD83 /* UI */,
+				B98E846829ABAA1E003A38A2 /* Timer */,
 			);
-			path = Example;
+			path = Examples;
 			sourceTree = "<group>";
 		};
-		B9A49AB229A4189D00D3BD83 /* UI */ = {
+		B98E846829ABAA1E003A38A2 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				B9F9B25929A27F9700FC1127 /* ExampleView.swift */,
+				B98E846A29ABAAC0003A38A2 /* TimerView.swift */,
+				B98E847229ABB0F5003A38A2 /* TimerViewState.swift */,
+				B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */,
+				B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */,
 			);
-			path = UI;
+			path = Timer;
 			sourceTree = "<group>";
 		};
-		B9A49AB329A418A200D3BD83 /* Model */ = {
+		B98E847929ABC05B003A38A2 /* UnisonDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				B9F9B25D29A2801100FC1127 /* ExampleState.swift */,
+				B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B9A49AB429A418A800D3BD83 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				B9A49A9A29A28D8F00D3BD83 /* ExampleUpdate.swift */,
-				B9A49AA029A2A00A00D3BD83 /* ExampleEffectHandler.swift */,
-			);
-			path = Logic;
+			path = UnisonDemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +158,24 @@
 			productReference = B9202DA629A27EC800BCD415 /* UnisonDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B98E847729ABC05B003A38A2 /* UnisonDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B98E847E29ABC05B003A38A2 /* Build configuration list for PBXNativeTarget "UnisonDemoTests" */;
+			buildPhases = (
+				B98E847429ABC05B003A38A2 /* Sources */,
+				B98E847529ABC05B003A38A2 /* Frameworks */,
+				B98E847629ABC05B003A38A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B98E847D29ABC05B003A38A2 /* PBXTargetDependency */,
+			);
+			name = UnisonDemoTests;
+			productName = UnisonDemoTests;
+			productReference = B98E847829ABC05B003A38A2 /* UnisonDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +188,10 @@
 				TargetAttributes = {
 					B9202DA529A27EC800BCD415 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					B98E847729ABC05B003A38A2 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B9202DA529A27EC800BCD415;
 					};
 				};
 			};
@@ -175,6 +211,7 @@
 			projectRoot = "";
 			targets = (
 				B9202DA529A27EC800BCD415 /* UnisonDemo */,
+				B98E847729ABC05B003A38A2 /* UnisonDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +225,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B98E847629ABC05B003A38A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -196,11 +240,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
-				B9A49AA129A2A00A00D3BD83 /* ExampleEffectHandler.swift in Sources */,
+				B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */,
+				B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */,
 				B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */,
-				B9F9B25E29A2801100FC1127 /* ExampleState.swift in Sources */,
-				B9F9B25A29A27F9700FC1127 /* ExampleView.swift in Sources */,
-				B9A49A9B29A28D8F00D3BD83 /* ExampleUpdate.swift in Sources */,
+				B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */,
+				B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B98E847429ABC05B003A38A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +262,11 @@
 		B969E25829AA704D008B2625 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = B969E25729AA704D008B2625 /* CodeGeneratorPlugin */;
+		};
+		B98E847D29ABC05B003A38A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9202DA529A27EC800BCD415 /* UnisonDemo */;
+			targetProxy = B98E847C29ABC05B003A38A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -386,6 +443,42 @@
 			};
 			name = Release;
 		};
+		B98E847F29ABC05B003A38A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C5SE39MZ59;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dsc.UnisonDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnisonDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnisonDemo";
+			};
+			name = Debug;
+		};
+		B98E848029ABC05B003A38A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C5SE39MZ59;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dsc.UnisonDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnisonDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnisonDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +496,15 @@
 			buildConfigurations = (
 				B9202DCB29A27ECA00BCD415 /* Debug */,
 				B9202DCC29A27ECA00BCD415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B98E847E29ABC05B003A38A2 /* Build configuration list for PBXNativeTarget "UnisonDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B98E847F29ABC05B003A38A2 /* Debug */,
+				B98E848029ABC05B003A38A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
