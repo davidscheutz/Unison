@@ -4,7 +4,7 @@ public protocol EffectHandler {
     associatedtype S
     associatedtype EF: Effect
     
-    func handle(_ effect: EF, with state: S) async -> EffectResult<S, EF.Result>
+    func handle(_ effect: EF, with state: S) -> AsyncStream<EffectResult<S, EF.Result>>
 }
 
 public protocol Effect {

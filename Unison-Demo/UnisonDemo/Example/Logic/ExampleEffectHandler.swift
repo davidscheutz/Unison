@@ -13,11 +13,13 @@ extension ExampleEffect {
 }
 
 final class ExampleEffectHandler: EffectHandler {
-    func handle(_ effect: ExampleEffect, with state: ExampleState) async -> EffectResult<ExampleState, ExampleEffect.Result> {
-        switch effect {
-        case .makeAPICall:
-            break
+    func handle(_ effect: ExampleEffect, with state: ExampleState) async -> AsyncStream<EffectResult<ExampleState, ExampleEffect.Result>> {
+        .init { continuation in
+            switch effect {
+            case .makeAPICall:
+                break
+            }
+            continuation.yield(.noChange)
         }
-        return .noChange
     }
 }

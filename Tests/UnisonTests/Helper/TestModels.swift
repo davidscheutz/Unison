@@ -28,10 +28,12 @@ enum TestEvent: Equatable {
     case increaseValue3
     case decreaseValue3
     case asyncWork
+    case multipleResults(count: Int)
 }
 
-enum TestEffect: Effect {
+enum TestEffect: Effect, Equatable {
     case asyncWork
+    case multipleResults(count: Int)
 }
 
 extension TestEffect {

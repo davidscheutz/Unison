@@ -101,17 +101,17 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
         case .dispatchEffect(let state, let effect):
             update(state)
             
-            let task = Task { [weak self] in
-                let effectResult = await effectHandler.handle(effect, with: state)
-                
-                switch effectResult {
-                case .noChange:
-                    break
-                case .result(let result):
-                    guard let self = self else { return }
-
-                    let effectUpdate = self.update.handle(result: result, self.state)
-                    self.didReceive(effectUpdate)
+            let task = Task { [weak self, effectHandler] in
+                for await effectResult in effectHandler.handle(effect, with: state) {
+                    switch effectResult {
+                    case .noChange:
+                        break
+                    case .result(let result):
+                        guard let self = self else { return }
+                        
+                        let effectUpdate = self.update.handle(result: result, self.state)
+                        self.didReceive(effectUpdate)
+                    }
                 }
             }
             

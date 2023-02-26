@@ -120,6 +120,30 @@ final class UnisonTests: XCTestCase {
         }
     }
     
+    func test_oneEffectMultipleResults() {
+        let sut = createSut()
+        let workCount = 3
+        
+        effectHandler.result = .success
+        
+        setupSpy(fulfillmentCount: workCount + 1, sut: sut)
+        
+        sut.handle(.multipleResults(count: workCount))
+        
+        spy.wait()
+        
+        let expected: [TestState] = [
+            .initial,
+            .initial.copy(asyncResult: .success + "1"),
+            .initial.copy(asyncResult: .success + "2"),
+            .initial.copy(asyncResult: .success + "3")
+        ]
+        
+        XCTAssertEqual(spy.values, expected)
+        XCTAssertEqual(update.receivedEvents, [.multipleResults(count: workCount)])
+        XCTAssertEqual(effectHandler.receivedEffects, [.multipleResults(count: workCount)])
+    }
+    
     // test UI events are dispatched on UI thread
     
     // event order (define - missing clarity!)

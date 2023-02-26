@@ -10,26 +10,33 @@ class TestEffectHandler: EffectHandler {
     var asyncWorkDuration: Double? // seconds
     var receivedEffects = [TestEffect]()
     
-    func handle(_ effect: TestEffect, with state: TestState) async -> EffectResult<TestState, TestEffect.Result> {
+    func handle(_ effect: TestEffect, with state: TestState) -> AsyncStream<EffectResult<TestState, TestEffect.Result>> {
         receivedEffects.append(effect)
         
-        switch effect {
-        case .asyncWork:
-            if shouldRetry {
-                shouldRetry = false
-                return .result(result: .retry)
-            }
-            
-            if let asyncWorkDuration = asyncWorkDuration {
-                try? await Task.sleep(nanoseconds: UInt64(asyncWorkDuration * 1_000_000_000))
-            }
-            
-            if let result = result {
-                return .result(result: .success(result: result))
-            } else if let error = error {
-                return .result(result: .failure(error: error))
-            } else {
-                fatalError("Invalid config")
+        return .init { continuation in
+            switch effect {
+            case .asyncWork:
+                if shouldRetry {
+                    shouldRetry = false
+                    continuation.yield(.result(result: .retry))
+                }
+                
+                if let asyncWorkDuration = asyncWorkDuration {
+                    Thread.sleep(forTimeInterval: asyncWorkDuration)
+                }
+                
+                if let result = result {
+                    continuation.yield(.result(result: .success(result: result)))
+                } else if let error = error {
+                    continuation.yield(.result(result: .failure(error: error)))
+                } else {
+                    fatalError("Invalid config")
+                }
+                
+            case .multipleResults(let count):
+                for task in 0..<count {
+                    continuation.yield(.result(result: .success(result: result! + "\(task + 1)")))
+                }
             }
         }
     }

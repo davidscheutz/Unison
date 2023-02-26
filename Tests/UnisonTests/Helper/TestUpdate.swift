@@ -31,6 +31,8 @@ class TestUpdate: Update {
             return .newState(state: currentState.copy(value3: currentState.value3 - 1))
         case .asyncWork:
             return .dispatchEffect(state: currentState, effect: .asyncWork)
+        case .multipleResults(let count):
+            return .dispatchEffect(state: currentState, effect: .multipleResults(count: count))
         }
     }
     
