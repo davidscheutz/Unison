@@ -1,6 +1,8 @@
 // Template name: SmartCopy
 // Template version: 1.0
 
+import Foundation
+
 {% for type in types.based.SmartCopy %}
 
 {% if type.variables.count > 0 %}

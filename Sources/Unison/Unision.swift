@@ -102,15 +102,21 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
             update(state)
             
             let task = Task { [weak self, effectHandler] in
-                for await effectResult in effectHandler.handle(effect, with: state) {
-                    switch effectResult {
-                    case .noChange:
-                        break
-                    case .result(let result):
-                        guard let self = self else { return }
-                        
-                        let effectUpdate = self.update.handle(result: result, self.state)
-                        self.didReceive(effectUpdate)
+                guard let self = self else { return }
+                
+                let handle: (U.EF.Result) -> Void = { result in
+                    let effectUpdate = self.update.handle(result: result, self.state)
+                    self.didReceive(effectUpdate)
+                }
+                
+                switch await effectHandler.handle(effect, with: state) {
+                case .empty:
+                    break
+                case .single(let result):
+                    handle(result)
+                case .repeating(let stream):
+                    for await result in stream {
+                        handle(result)
                     }
                 }
             }

@@ -7,37 +7,41 @@ class TestEffectHandler: EffectHandler {
     var result: String?
     var error: String?
     var shouldRetry = false
+    var emptyResult = false
     var asyncWorkDuration: Double? // seconds
     var receivedEffects = [TestEffect]()
     
-    func handle(_ effect: TestEffect, with state: TestState) -> AsyncStream<EffectResult<TestState, TestEffect.Result>> {
+    func handle(_ effect: TestEffect, with state: TestState) async -> EffectResult<TestEffect.Result> {
         receivedEffects.append(effect)
         
-        return .init { continuation in
-            switch effect {
-            case .asyncWork:
-                if shouldRetry {
-                    shouldRetry = false
-                    continuation.yield(.result(result: .retry))
-                }
-                
-                if let asyncWorkDuration = asyncWorkDuration {
-                    Thread.sleep(forTimeInterval: asyncWorkDuration)
-                }
-                
-                if let result = result {
-                    continuation.yield(.result(result: .success(result: result)))
-                } else if let error = error {
-                    continuation.yield(.result(result: .failure(error: error)))
-                } else {
-                    fatalError("Invalid config")
-                }
-                
-            case .multipleResults(let count):
-                for task in 0..<count {
-                    continuation.yield(.result(result: .success(result: result! + "\(task + 1)")))
-                }
+        switch effect {
+        case .asyncWork:
+            if emptyResult {
+                return .empty
             }
+            if shouldRetry {
+                shouldRetry = false
+                return .single(.retry)
+            }
+            
+            if let asyncWorkDuration = asyncWorkDuration {
+                try? await Task.sleep(nanoseconds: UInt64(asyncWorkDuration * 1_000_000_000))
+            }
+            
+            if let result = result {
+                return .single(.success(result: result))
+            } else if let error = error {
+                return .single(.failure(error: error))
+            } else {
+                fatalError("Invalid config")
+            }
+            
+        case .multipleResults(let count):
+            return .repeating(.init { continuation in
+                for task in 0..<count {
+                    continuation.yield(.success(result: result! + "\(task + 1)"))
+                }
+            })
         }
     }
 }

@@ -4,14 +4,15 @@ public protocol EffectHandler {
     associatedtype S
     associatedtype EF: Effect
     
-    func handle(_ effect: EF, with state: S) -> AsyncStream<EffectResult<S, EF.Result>>
+    func handle(_ effect: EF, with state: S) async -> EffectResult<EF.Result>
 }
 
 public protocol Effect {
     associatedtype Result
 }
 
-public enum EffectResult<State, Result> {
-    case noChange
-    case result(result: Result)
+public enum EffectResult<Result> {
+    case repeating(AsyncStream<Result>)
+    case single(Result)
+    case empty
 }
