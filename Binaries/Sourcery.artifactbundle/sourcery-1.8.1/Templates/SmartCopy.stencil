@@ -8,12 +8,12 @@ import Foundation
 {% if type.variables.count > 0 %}
 extension {{ type.name }} {
     public func copy(
-        {% for property in type.variables|instance %}
+        {% for property in type.variables|instance|!computed %}
         {{ property.name }}: {{ property.typeName }}? = nil{% ifnot forloop.last %}, {% endif %}
         {% endfor %}
     ) -> {{ type.name }} {
         return {{ type.name }}(
-            {% for property in type.variables|instance %}
+            {% for property in type.variables|instance|!computed %}
             {{ property.name }}: {{ property.name }} ?? self.{{ property.name }}{% ifnot forloop.last %}, {% endif %}
             {% endfor %}
         )
