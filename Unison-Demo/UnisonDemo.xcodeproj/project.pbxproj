@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9017F1029AF884A002338C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F0F29AF884A002338C9 /* LoginView.swift */; };
+		B9017F1229AF886A002338C9 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F1129AF886A002338C9 /* LoginViewState.swift */; };
+		B9017F1429AF88F9002338C9 /* LoginUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F1329AF88F9002338C9 /* LoginUpdate.swift */; };
+		B9017F1629AF8941002338C9 /* LoginEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */; };
+		B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F1929AF8E11002338C9 /* String+Email.swift */; };
 		B909B6BD29A41BD900F68A3E /* Unison in Frameworks */ = {isa = PBXBuildFile; productRef = B909B6BC29A41BD900F68A3E /* Unison */; };
+		B90E202329B0163B001CC990 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90E202229B0163B001CC990 /* ActivityIndicator.swift */; };
 		B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DA929A27EC800BCD415 /* UnisonApp.swift */; };
 		B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DAB29A27EC800BCD415 /* ContentView.swift */; };
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
+		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
 		B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */; };
 		B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */; };
@@ -29,11 +36,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9017F0F29AF884A002338C9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B9017F1129AF886A002338C9 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
+		B9017F1329AF88F9002338C9 /* LoginUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdate.swift; sourceTree = "<group>"; };
+		B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEffectHandler.swift; sourceTree = "<group>"; };
+		B9017F1929AF8E11002338C9 /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		B909B6BA29A41B9400F68A3E /* Unison */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Unison; path = ..; sourceTree = "<group>"; };
+		B90E202229B0163B001CC990 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B9202DA629A27EC800BCD415 /* UnisonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnisonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9202DA929A27EC800BCD415 /* UnisonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonApp.swift; sourceTree = "<group>"; };
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B98E846A29ABAAC0003A38A2 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUpdate.swift; sourceTree = "<group>"; };
 		B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEffectHandler.swift; sourceTree = "<group>"; };
@@ -61,6 +75,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9017F0E29AF883D002338C9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B9017F0F29AF884A002338C9 /* LoginView.swift */,
+				B9017F1129AF886A002338C9 /* LoginViewState.swift */,
+				B9017F1329AF88F9002338C9 /* LoginUpdate.swift */,
+				B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B9017F1829AF8E05002338C9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B9017F1929AF8E11002338C9 /* String+Email.swift */,
+				B90E202229B0163B001CC990 /* ActivityIndicator.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B909B6B929A41B9400F68A3E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +136,7 @@
 				B9202DA929A27EC800BCD415 /* UnisonApp.swift */,
 				B9202DAB29A27EC800BCD415 /* ContentView.swift */,
 				B9202DD429A27F4500BCD415 /* Examples */,
+				B9017F1829AF8E05002338C9 /* Helper */,
 				B9202DAD29A27ECA00BCD415 /* Assets.xcassets */,
 			);
 			path = UnisonDemo;
@@ -110,6 +145,7 @@
 		B9202DD429A27F4500BCD415 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				B9017F0E29AF883D002338C9 /* Login */,
 				B98E846829ABAA1E003A38A2 /* Timer */,
 			);
 			path = Examples;
@@ -130,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */,
+				B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */,
 			);
 			path = UnisonDemoTests;
 			sourceTree = "<group>";
@@ -240,11 +277,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
+				B9017F1029AF884A002338C9 /* LoginView.swift in Sources */,
+				B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */,
 				B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */,
+				B90E202329B0163B001CC990 /* ActivityIndicator.swift in Sources */,
+				B9017F1629AF8941002338C9 /* LoginEffectHandler.swift in Sources */,
 				B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */,
+				B9017F1229AF886A002338C9 /* LoginViewState.swift in Sources */,
 				B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */,
 				B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */,
 				B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */,
+				B9017F1429AF88F9002338C9 /* LoginUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */,
 				B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

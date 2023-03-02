@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     
     enum Example: String, CaseIterable, Identifiable {
+        case login
         case timer
         
         var id: String { rawValue }
@@ -22,15 +23,19 @@ struct ContentView: View {
 }
 
 extension ContentView {
+    @ViewBuilder
     private func view(for example: Example) -> some View {
-        Group {
-            switch example {
-            case .timer:
-                TimerView.create(
-                    update: TimerUpdate(),
-                    effectHandler: TimerEffectHandler()
-                )
-            }
+        switch example {
+        case .login:
+            LoginView.create(
+                update: LoginUpdate(),
+                effectHandler: LoginEffectHandler()
+            )
+        case .timer:
+            TimerView.create(
+                update: TimerUpdate(),
+                effectHandler: TimerEffectHandler()
+            )
         }
     }
 }

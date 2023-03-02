@@ -21,3 +21,18 @@ public enum UpdateResult<State: Equatable, Effect: Equatable>: Equatable {
     case newState(state: State)
     case dispatchEffect(state: State, effect: Effect)
 }
+
+extension UpdateResult {
+    public var value: State {
+        get throws {
+            switch self {
+            case .noChange:
+                throw NSError(domain: "No value", code: 0)
+            case .newState(let state):
+                return state
+            case .dispatchEffect(let state, _):
+                return state
+            }
+        }
+    }
+}
