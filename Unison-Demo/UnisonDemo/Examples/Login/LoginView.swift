@@ -97,7 +97,7 @@ struct LoginView_Previews: PreviewProvider {
             username: .init(value: "xxx", error: "Invalid email"),
             password: .init(value: "", error: "empty passowrd")
         ))
-        render(.initial.copy(error: "No internet connection"))
+        render(.initial.copy(error: .update("No internet connection")))
     }
     
     static func render(_ state: LoginViewState) -> some View {

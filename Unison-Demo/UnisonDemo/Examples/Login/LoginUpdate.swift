@@ -25,10 +25,9 @@ final class LoginUpdate: Update {
     func handle(result: LoginEffect.Result, _ currentState: LoginViewState) -> Result {
         switch result {
         case .loginFailed(let error):
-            return .newState(state: currentState.copy(isLoading: false, error: error))
+            return .newState(state: currentState.copy(isLoading: false, error: .update(error)))
         case .resetError:
-            // TODO: make copy function support resetting optionals
-            return .newState(state: currentState.copy(error: nil))
+            return .newState(state: currentState.copy(error: .reset))
         }
     }
     
@@ -55,7 +54,7 @@ final class LoginUpdate: Update {
         }
         
         return .dispatchEffect(
-            state: state.copy(isLoading: true, error: nil),
+            state: state.copy(isLoading: true, error: .reset),
             effect: .login(username: username, password: password)
         )
     }
