@@ -13,7 +13,7 @@ extension UnisonView where Self : View {
     public static func create<U: Update, H: EffectHandler>(
         update: U,
         effectHandler: H
-    ) -> some View where State : InitialState, U.S == State, H.S == U.S, U.EV == Event, U.EF == H.EF {
+    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
         create(
             initialState: .initial,
             update: update,
@@ -25,7 +25,7 @@ extension UnisonView where Self : View {
         initialState: State,
         update: U,
         effectHandler: H
-    ) -> some View where U.S == State, H.S == U.S, U.EV == Event, U.EF == H.EF {
+    ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
             unison: Unison(initialState: initialState, update: update, effectHandler: effectHandler),
             Self.self
@@ -34,7 +34,7 @@ extension UnisonView where Self : View {
 }
 
 struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View>: View
-    where U.S == Child.State, U.EV == Child.Event, U.EF == H.EF, U.S == H.S {
+    where U.S == Child.State, U.EV == Child.Event, U.EF == H.EF {
     
     typealias Parent = Unison<Child.State, U, Child.Event, H>
     
@@ -55,7 +55,7 @@ struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View
 }
 
 final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObject
-    where U.S == S, U.EV == EV, U.EF == H.EF, H.S == S {
+    where U.S == S, U.EV == EV, U.EF == H.EF {
     
     @Published private(set) var state: S
         
@@ -109,7 +109,7 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
                     self.didReceive(effectUpdate)
                 }
                 
-                switch await effectHandler.handle(effect, with: state) {
+                switch await effectHandler.handle(effect) {
                 case .empty:
                     break
                 case .single(let result):

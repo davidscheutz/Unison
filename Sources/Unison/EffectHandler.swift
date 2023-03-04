@@ -1,10 +1,9 @@
 import Foundation
 
 public protocol EffectHandler {
-    associatedtype S
     associatedtype EF: Effect
     
-    func handle(_ effect: EF, with state: S) async -> EffectResult<EF.Result>
+    func handle(_ effect: EF) async -> EffectResult<EF.Result>
 }
 
 public protocol Effect: Equatable {

@@ -17,7 +17,7 @@ final class TimerEffectHandler: EffectHandler {
     private var timer: Timer?
     private let interval: TimeInterval = 0.5
     
-    func handle(_ effect: TimerEffect, with state: TimerViewState) async -> EffectResult<TimerEffect.Result> {
+    func handle(_ effect: TimerEffect) async -> EffectResult<TimerEffect.Result> {
         switch effect {
         case .startTimer(let elapsed, let duration):
             return await .repeating(startTimer(with: duration, elapsed: elapsed))

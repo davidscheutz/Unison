@@ -11,7 +11,7 @@ class TestEffectHandler: EffectHandler {
     var asyncWorkDuration: Double? // seconds
     var receivedEffects = [TestEffect]()
     
-    func handle(_ effect: TestEffect, with state: TestState) async -> EffectResult<TestEffect.Result> {
+    func handle(_ effect: TestEffect) async -> EffectResult<TestEffect.Result> {
         receivedEffects.append(effect)
         
         switch effect {

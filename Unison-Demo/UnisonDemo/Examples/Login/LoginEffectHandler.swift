@@ -14,7 +14,7 @@ final class LoginEffectHandler: EffectHandler {
     
     private let errorDuration: TimeInterval = 3
     
-    func handle(_ effect: LoginEffect, with state: LoginViewState) async -> EffectResult<LoginEffect.Result> {
+    func handle(_ effect: LoginEffect) async -> EffectResult<LoginEffect.Result> {
         switch effect {
         case .login(let username, let password):
             // simulate API call
