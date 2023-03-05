@@ -48,6 +48,7 @@
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
+		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B98E846A29ABAAC0003A38A2 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUpdate.swift; sourceTree = "<group>"; };
 		B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEffectHandler.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 		B9202DA829A27EC800BCD415 /* UnisonDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B985E70C29B555330042AD8B /* Info.plist */,
 				B9202DA929A27EC800BCD415 /* UnisonApp.swift */,
 				B9202DAB29A27EC800BCD415 /* ContentView.swift */,
 				B9202DD429A27F4500BCD415 /* Examples */,
@@ -440,7 +442,7 @@
 				DEVELOPMENT_TEAM = C5SE39MZ59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = UnisonDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -469,7 +471,7 @@
 				DEVELOPMENT_TEAM = C5SE39MZ59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = UnisonDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
