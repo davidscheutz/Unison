@@ -76,16 +76,20 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
     
     func startIfNeeded() {
         guard !started else { return }
+        Logger.log("Unison started")
         started = true
         didReceive(update.start(state))
     }
     
     func stopIfNeeded() {
+        Logger.log("Unison stopped")
+        
         runningTasks.forEach { $0.cancel() }
         runningTasks.removeAll()
     }
     
     func handle(_ event: EV) {
+        Logger.log("Event received: %@", event)
         let updateResult = update.handle(event: event, state)
         didReceive(updateResult)
     }
@@ -101,10 +105,13 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
         case .dispatchEffect(let state, let effect):
             update(state)
             
+            Logger.log("Effect dispatched: %@", effect)
+            
             let task = Task { [weak self, effectHandler] in
                 guard let self = self else { return }
                 
                 let handle: (U.EF.Result) -> Void = { result in
+                    Logger.log("Effect result received: %@", result)
                     let effectUpdate = self.update.handle(result: result, self.state)
                     self.didReceive(effectUpdate)
                 }
@@ -127,6 +134,8 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
     
     private func update(_ state: S) {
         guard self.state != state else { return }
+        
+        Logger.log("New state received: %@", state)
         
         let update = { [weak self] in
             self?.state = state
