@@ -10,19 +10,15 @@ struct TimerViewState: Equatable, InitialState, SmartCopy {
     
     static let initial = TimerViewState(state: .idle, duration: 60, elapsed: 0, minDuration: 5, maxDuration: 60 * 5)
     
-    // TODO: update SmartCopy template to not include private properties in copy function
-//    private let durationFormatter: DateComponentsFormatter = {
-//        let formatter = DateComponentsFormatter()
-//        formatter.allowedUnits = [.second, .minute]
-//        formatter.zeroFormattingBehavior = .pad
-//        return formatter
-//    }()
-    
-    var elapsedFormatted: String {
+    private static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.second, .minute]
         formatter.zeroFormattingBehavior = .pad
-        return formatter.string(from: elapsed)!
+        return formatter
+    }()
+    
+    var elapsedFormatted: String {
+        Self.formatter.string(from: elapsed)!
     }
 }
 
