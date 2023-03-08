@@ -29,7 +29,7 @@ extension ContentView {
         case .login:
             LoginView.create(
                 update: LoginUpdate(),
-                effectHandler: LoginEffectHandler()
+                effectHandler: LoginEffectHandler(api: LoginApi())
             )
         case .timer:
             TimerView.create(

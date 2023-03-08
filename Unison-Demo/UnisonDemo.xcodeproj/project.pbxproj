@@ -17,6 +17,7 @@
 		B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DA929A27EC800BCD415 /* UnisonApp.swift */; };
 		B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DAB29A27EC800BCD415 /* ContentView.swift */; };
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
+		B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A9C1E29B827C80073801F /* LoginApi.swift */; };
 		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
 		B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */; };
@@ -47,6 +48,7 @@
 		B9202DA929A27EC800BCD415 /* UnisonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonApp.swift; sourceTree = "<group>"; };
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B93A9C1E29B827C80073801F /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B98E846A29ABAAC0003A38A2 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B9017F1129AF886A002338C9 /* LoginViewState.swift */,
 				B9017F1329AF88F9002338C9 /* LoginUpdate.swift */,
 				B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */,
+				B93A9C1E29B827C80073801F /* LoginApi.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
+				B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */,
 				B9017F1029AF884A002338C9 /* LoginView.swift in Sources */,
 				B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */,
 				B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */,

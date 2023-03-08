@@ -13,18 +13,20 @@ enum LoginEffect: Effect {
 final class LoginEffectHandler: EffectHandler {
     
     private let errorDuration: TimeInterval = 3
+    private let api: LoginApi
+    
+    init(api: LoginApi) {
+        self.api = api
+    }
     
     func handle(_ effect: LoginEffect) async -> EffectResult<LoginEffect.Result> {
         switch effect {
         case .login(let username, let password):
-            // simulate API call
-            try? await Task.sleep(nanoseconds: UInt64(2 * 1_000_000_000)) // 2 sec
-            
-            // test code
-            if username == "unison" && password == "pass" {
+            do {
+                try await api.login(username: username, password: password)
                 // navigate to e.g. home screen
                 return .empty
-            } else {
+            } catch {
                 return .repeating(.init { continuation in
                     continuation.yield(.loginFailed("Wrong credentials"))
                     DispatchQueue.global().asyncAfter(deadline: .now() + errorDuration) {
