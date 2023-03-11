@@ -7,11 +7,13 @@ class TestUpdate: Update {
     var initialEffect: TestEffect?
     var receivedEvents = [TestEvent]()
     
-    func start(_ initialState: TestState) -> UpdateResult<TestState, TestEffect> {
+    func first() -> First<TestState, TestEffect> {
+        let initialState = TestState.initial
+        
         if let initialEffect = initialEffect {
-            return .dispatchEffect(state: initialState, effect: initialEffect)
+            return .initialEffect(state: initialState, effect: initialEffect)
         } else {
-            return .noChange
+            return .initialState(state: initialState)
         }
     }
     

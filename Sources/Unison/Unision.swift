@@ -13,21 +13,9 @@ extension UnisonView where Self : View {
     public static func create<U: Update, H: EffectHandler>(
         update: U,
         effectHandler: H
-    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
-        create(
-            initialState: .initial,
-            update: update,
-            effectHandler: effectHandler
-        )
-    }
-    
-    public static func create<U: Update, H: EffectHandler>(
-        initialState: State,
-        update: U,
-        effectHandler: H
     ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
-            unison: Unison(initialState: initialState, update: update, effectHandler: effectHandler),
+            unison: Unison(update: update, effectHandler: effectHandler),
             Self.self
         )
     }
@@ -61,24 +49,35 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
         
     private let update: U
     private let effectHandler: H
+    private var initialEffect: U.EF?
     private var started = false
     private var runningTasks = [Task<Void, Never>]()
     
     init(
-        initialState: S,
         update: U,
         effectHandler: H
     ) where U.S == S, U.EV == EV, U.EF == H.EF {
-        state = initialState
         self.update = update
         self.effectHandler = effectHandler
+        
+        switch update.first() {
+        case .initialState(let state):
+            self.state = state
+        case .initialEffect(let state, let effect):
+            self.state = state
+            initialEffect = effect
+        }
     }
     
     func startIfNeeded() {
         guard !started else { return }
         Logger.log("Unison started")
         started = true
-        didReceive(update.start(state))
+        
+        if let initialEffect = initialEffect {
+            didReceive(.dispatchEffect(state: state, effect: initialEffect))
+            self.initialEffect = nil
+        }
     }
     
     func stopIfNeeded() {

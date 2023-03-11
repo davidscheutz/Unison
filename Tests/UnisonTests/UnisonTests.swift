@@ -20,9 +20,8 @@ final class UnisonTests: XCTestCase {
     }
     
     func test_initialEffect() {
-        let sut = createSut()
+        let sut = createSut(initialEffect: .asyncWork)
         
-        update.initialEffect = .asyncWork
         effectHandler.result = .success
         
         setupSpy(fulfillmentCount: 2, sut: sut)
@@ -150,12 +149,13 @@ final class UnisonTests: XCTestCase {
     
     // MARK: - Helper
     
-    private func createSut() -> Sut {
+    private func createSut(initialEffect: TestEffect? = nil) -> Sut {
         update = TestUpdate()
         effectHandler = TestEffectHandler()
         
+        update.initialEffect = initialEffect
+        
         return Unison(
-            initialState: .initial,
             update: update,
             effectHandler: effectHandler
         )

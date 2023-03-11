@@ -5,14 +5,14 @@ public protocol Update {
     associatedtype EV
     associatedtype EF: Effect
     
-    func start(_ initialState: S) -> UpdateResult<S, EF>
+    func first() -> First<S, EF>
     func handle(event: EV, _ currentState: S) -> UpdateResult<S, EF>
     func handle(result: EF.Result, _ currentState: S) -> UpdateResult<S, EF>
 }
 
-extension Update {
-    public func start(_ initialState: S) -> UpdateResult<S, EF> {
-        .noChange
+extension Update where S : InitialState {
+    public func first() -> First<S, EF> {
+        .initialState(state: S.initial)
     }
 }
 
@@ -20,6 +20,11 @@ public enum UpdateResult<State: Equatable, Effect: Equatable>: Equatable {
     case noChange
     case newState(state: State)
     case dispatchEffect(state: State, effect: Effect)
+}
+
+public enum First<State: Equatable, Effect: Equatable>: Equatable {
+    case initialState(state: State)
+    case initialEffect(state: State, effect: Effect)
 }
 
 extension UpdateResult {
