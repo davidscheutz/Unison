@@ -2,24 +2,36 @@
 
 First things first: This is the beginning of a community-driven open-source project actively seeking contributions, be it code, documentation, or ideas.
 
-Whether you're looking to prototype your UI first, test drive it, or do a technical planning with your team before starting development, Unison is designed with modern practices in mind. 
+Unison is a versatile library designed for building applications with consistency and simplicity, harnessing the power of both Functional Programming (FP) and Object-Oriented Programming (OOP). 
 
-This framework provides guidelines and enforces strict rules for updating the state of your application, promoting reliable, bug-free code and making it easy to reason about the system's behavior.
+By incorporating key principles from these paradigms, Unison offers:
+
+- **Predictability**: Pure functions and immutability for consistent, reliable behavior.
+- **Testability**: Easily perform unit testing and debugging with isolated functions.
+- **Concurrency**: Safeguard against data races in concurrent environments using immutable data structures.
+- **Encapsulation**: Enhance code organization and maintainability by grouping data and related methods.
+- **Inheritance**: Promote modularity and code reuse through class hierarchies.
+- **Polymorphism**: Increase flexibility and extensibility with a unified interface for various data types.
+
+These principles facilitate the development of robust, reliable, and bug-free Swift applications. Unison is designed to be compatible with all Apple platforms (iOS, macOS, tvOS, and watchOS).
+
+Unison currently offers convenient syntax for seamless integration with SwiftUI, and plans are underway to provide similar support for UIKit.
 
 ### Overview
 
-The Unison framework is based on the Model-View-Update (MVU) pattern. MVU promotes a unidirectional flow of data, where the state of the system is represented by a model, and user interactions or external events trigger updates to the model, which in turn trigger updates to the view.
+The Unison framework is based on the Model-Update-Effect (MUE) pattern. MUE emphasizes unidirectional data flow and the separation of state, business logic, and side effects, fostering maintainable and testable applications.
 
 <img src="https://github.com/davidscheutz/Unison/blob/master/Unison.png" alt="Unison" width="300" height="390">
 
 ### Benefits of using Unison
 
-- **Simplicity**: Unison provides a simple, concise API for defining reactive systems. The framework is designed to be easy to use and understand, even for developers who are new to reactive programming.
-- **Separation of Concerns**: Unison provides guidelines that help you build a cohesive system with clear responsibilities, making it easy to scale your project and team.
-- **Testabilty**: Unison separates the pure and impure code, making it easy to write unit tests for each component of the system.
-- **Thread-safe**: Unison is designed to work well in a concurrent environment, where multiple threads or processes may be updating the app state simultaneously. The framework provides built-in mechanisms for handling concurrency and preventing race conditions.
-- **Preview-abilty**: Unlock the power of SwiftUI's previews and render all the different states of your screen.
-- **Performance**: Unison is designed to be efficient and performant, to ensure that even large, complex systems are fast and responsive.
+Unison is tailored to suit modern development practices, whether you're prototyping your UI, test-driving your app, or engaging in technical planning with your team.
+
+Unison's straightforward API for defining reactive systems streamlines collaboration and planning, enabling efficient teamwork.
+
+Seamlessly integrated with SwiftUI's previews, Unison allows you to visualize various states of your screen effortlessly.
+
+Ultimately, Unison is designed for efficiency and high performance, ensuring that even large, complex systems remain fast and responsive throughout the development process.
 
 ## Installation
 
@@ -33,7 +45,7 @@ TODO add more details
 
 The State component is a model containing all the information required to render the view. It should be immutable, with all fields declared using the `let` keyword.
 
-```
+```swift
 struct YourViewState: Equatable, SmartCopy, InitialState {
     let userInput: String
 }
@@ -49,7 +61,7 @@ The `InitialState` protocol is optional, but can be used to provide the initial 
 
 The Event component defines all user interactions that can be captured by the screen. It should be designed to be as granular as possible to enable more precise control over state updates.
 
-```
+```swift
 enum YourViewEvent {
     case userInputChanged(String)
 }
@@ -61,7 +73,7 @@ The Update component is the only place where state updates occur. It is designed
 
 `Update` requires two functions to be implemented: one to handle user input (events), and another to handle results from effects.
 
-```
+```swift
 typealias Result = UpdateResult<YourViewState, YourEffect>
 
 func handle(event: YourViewEvent, _ currentState: YourViewState) -> Result
@@ -70,7 +82,7 @@ func handle(result: YourEffect.Result, _ currentState: YourViewState) -> Result
 
 The return value for an update function can be:
 
-```
+```swift
 public enum UpdateResult<State, Effect> {
     case noChange
     case newState(state: State)
@@ -82,7 +94,7 @@ public enum UpdateResult<State, Effect> {
 
 The Effect component represents functions that have side effects, such as API calls, persisting data, and navigation. Effects need to have defined results as well.
 
-```
+```swift
 enum YourEffect: Effect {
     case action(input: String)
     
@@ -97,13 +109,13 @@ enum YourEffect: Effect {
 
 The Effect Handler is where code is implemented to perform each effect defined previously.
 
-```
+```swift
 func handle(_ effect: YourEffect) async -> EffectResult<YourEffect.Result> {
 ```
 
 The retrun value for an effect can be:
 
-```
+```swift
 public enum EffectResult<Result> {
     case repeating(AsyncStream<Result>)
     case single(Result)
@@ -115,7 +127,7 @@ public enum EffectResult<Result> {
 
 Every `View` is constructed with two parameters: an immutable state and a completion that handles user input.
 
-```
+```swift
 struct YourView: View, UnisonView {
     
     let state: YourViewState
@@ -125,7 +137,7 @@ struct YourView: View, UnisonView {
 
 `UnisonView` provides a simple class extension to instantiate and connect your view.
 
-```
+```swift
 YourView.create(
      update: YourUpdate(),
      effectHandler: YourEffectHandler()
