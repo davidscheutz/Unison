@@ -11,11 +11,11 @@ public protocol UnisonView {
 
 extension UnisonView where Self : View {
     public static func create<U: Update, H: EffectHandler>(
-        update: U,
+        update: U.Type,
         effectHandler: H
     ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
-            unison: Unison(update: update, effectHandler: effectHandler),
+            unison: Unison(update: update.init(), effectHandler: effectHandler),
             Self.self
         )
     }

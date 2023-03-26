@@ -7,6 +7,8 @@ class TestUpdate: Update {
     var initialEffect: TestEffect?
     var receivedEvents = [TestEvent]()
     
+    required init() {}
+    
     func first() -> First<TestState, TestEffect> {
         let initialState = TestState.initial
         

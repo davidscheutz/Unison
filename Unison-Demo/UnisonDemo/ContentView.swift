@@ -28,12 +28,12 @@ extension ContentView {
         switch example {
         case .login:
             LoginView.create(
-                update: LoginUpdate(),
+                update: LoginUpdate.self,
                 effectHandler: LoginEffectHandler(api: LoginApi())
             )
         case .timer:
             TimerView.create(
-                update: TimerUpdate(),
+                update: TimerUpdate.self,
                 effectHandler: TimerEffectHandler()
             )
         }
