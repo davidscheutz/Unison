@@ -12,9 +12,28 @@ final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObj
     private var runningTasks = [Task<Void, Never>]()
     
     init(
-        update: U,
+        initialState: S,
+        update: U.Type,
         effectHandler: H
     ) where U.S == S, U.EV == EV, U.EF == H.EF {
+        self.update = update.init()
+        self.state = initialState
+        self.effectHandler = effectHandler
+    }
+    
+    init(
+        update: U.Type,
+        effectHandler: H
+    ) where S: InitialState, U.S == S, U.EV == EV, U.EF == H.EF {
+        self.update = update.init()
+        self.state = S.initial
+        self.effectHandler = effectHandler
+    }
+    
+    init(
+        update: U,
+        effectHandler: H
+    ) where U : InitialUpdate, U.S == S, U.EV == EV, U.EF == H.EF {
         self.update = update
         self.effectHandler = effectHandler
         

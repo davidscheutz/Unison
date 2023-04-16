@@ -1,7 +1,7 @@
 import Unison
 import Foundation
 
-class TestUpdate: Update {
+class TestUpdate: Update, InitialUpdate {
     
     // Test config
     var initialEffect: TestEffect?

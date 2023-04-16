@@ -65,10 +65,12 @@ extension TimerView {
 #if DEBUG
 struct TimerView_Previews: PreviewProvider {
 
+    static let state = TimerViewState(state: .idle, duration: 60, elapsed: 0, minDuration: 0, maxDuration: 120)
+    
     static var previews: some View {
-        render(.initial)
-        render(.initial.copy(state: .running, elapsed: 61))
-        render(.initial.copy(state: .paused, elapsed: 1_000))
+        render(state)
+        render(state.copy(state: .running, elapsed: 61))
+        render(state.copy(state: .paused, elapsed: 1_000))
     }
     
     static func render(_ state: TimerViewState) -> some View {
