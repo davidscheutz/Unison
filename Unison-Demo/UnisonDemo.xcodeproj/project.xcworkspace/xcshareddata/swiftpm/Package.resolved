@@ -1,0 +1,13 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftdependencycontainer",
+      "kind" : "localSourceControl",
+      "location" : "/Users/davidscheutz/Projects/DSC/SwiftDependencyContainer",
+      "state" : {
+        "revision" : "02c6fac3e60660127dcc6e026f90145fdb1a3ac6"
+      }
+    }
+  ],
+  "version" : 2
+}

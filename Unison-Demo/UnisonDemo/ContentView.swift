@@ -29,12 +29,12 @@ extension ContentView {
         case .login:
             LoginView.create(
                 update: LoginUpdate.self,
-                effectHandler: LoginEffectHandler(api: LoginApi())
+                effectHandler: LoginEffectHandler.self
             )
         case .timer:
             TimerView.create(
                 update: TimerUpdate.self,
-                effectHandler: TimerEffectHandler()
+                effectHandler: TimerEffectHandler.self
             )
         }
     }
