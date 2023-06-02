@@ -5,6 +5,6 @@ struct Dependencies {
     static func setup() {
         try! DependencyContainer.default.add { LoginApi() }
         
-        registeredResolver = DependencyContainer.default
+        Unison.register(resolver: DependencyContainer.default)
     }
 }

@@ -21,7 +21,7 @@ final class LoginEffectHandler: EffectHandler {
     }
     
     static func create(using resolver: Resolver) -> LoginEffectHandler {
-        LoginEffectHandler(api: resolver.inferred())
+        .init(api: resolver.inferred())
     }
     
     func handle(_ effect: LoginEffect) async -> EffectResult<LoginEffect.Result> {

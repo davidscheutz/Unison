@@ -6,11 +6,15 @@ public protocol Resolver {
     func named<Key, T>(_ key: Key) -> T
 }
 
-public var registeredResolver: Resolver?
-
-internal var resolver: Resolver {
-    registeredResolver ?? DependencyContainer.default
+public final class Unison {
+    internal static var resolver: Resolver?
+    
+    public static func register(resolver: Resolver) {
+        self.resolver = resolver
+    }
 }
+
+// MARK: - Third party integrations
 
 extension DependencyContainer: Resolver {
     public func inferred<T>() -> T {

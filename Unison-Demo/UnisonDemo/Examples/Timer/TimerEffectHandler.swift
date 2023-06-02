@@ -13,7 +13,7 @@ enum TimerEffect: Effect {
 }
 
 final class TimerEffectHandler: EffectHandler {
-    static func create(using resolver: Unison.Resolver) -> TimerEffectHandler {
+    static func create(using resolver: Resolver) -> TimerEffectHandler {
         TimerEffectHandler()
     }
     
