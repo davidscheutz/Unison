@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftdependencycontainer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/davidscheutz/SwiftDependencyContainer.git",
+      "state" : {
+        "revision" : "8e6c1735c97ec29dfbebfcfd260d296bb3495df5",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
