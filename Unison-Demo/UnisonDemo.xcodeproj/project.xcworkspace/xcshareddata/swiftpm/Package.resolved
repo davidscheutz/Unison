@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/davidscheutz/SwiftDependencyContainer.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "c29c28be17059a58c522ac360139d5fa40223f50"
+        "revision" : "8e6c1735c97ec29dfbebfcfd260d296bb3495df5",
+        "version" : "0.1.0"
       }
     }
   ],

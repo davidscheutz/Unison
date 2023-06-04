@@ -13,7 +13,7 @@ let package = Package(
         .plugin(name: "CodeGeneratorPlugin", targets: ["CodeGeneratorPlugin"])
     ],
     dependencies: [
-        .package(url: "https://github.com/davidscheutz/SwiftDependencyContainer.git", branch: "master")
+        .package(url: "https://github.com/davidscheutz/SwiftDependencyContainer.git", from: "0.1.0")
     ],
     targets: [
         .target(
