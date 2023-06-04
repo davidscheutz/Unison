@@ -14,6 +14,9 @@ final class ListUpdate: Update {
     func handle(event: ListEvent, _ currentState: ListState) -> UpdateResult<ListState, ListEffect> {
         switch event {
         case .loadNextPage:
+            guard !currentState.isLoading else {
+                return .noChange
+            }
             return .dispatchEffect(state: currentState.copy(isLoading: true), effect: .LoadPage(currentState.currentPage))
         case .didSelectItem(let id):
             // TODO

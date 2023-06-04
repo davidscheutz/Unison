@@ -14,12 +14,18 @@ struct ListView: View, UnisonView {
                     .id(item.id)
                     .padding()
                     .onTapGesture { handler(.didSelectItem(id: item.id)) }
-                    .apply(isLast) { $0.onAppear { handler(.loadNextPage) } }
+                    .apply(isLast) { view in
+                        VStack(alignment: .leading) {
+                            view
+                            ProgressView().padding(.leading)
+                        }
+                        .onAppear { handler(.loadNextPage) }
+                    }
             }
-            
-            if state.isLoading {
+        }
+        .overlay {
+            if state.data.isEmpty && state.isLoading {
                 ProgressView()
-                    .padding()
             }
         }
         .navigationTitle("Demo Items")
