@@ -18,13 +18,6 @@ final class UnisionDispatcher<S: Equatable, U: Update, EV, H: EffectHandler>: Ob
         self.init(initialState: .initial, update: update.init(), effectHandler: effectHandler)
     }
     
-    convenience init(
-        update: U.Type,
-        effectHandler: H
-    ) where U.S == S, U.EV == EV, U.EF == H.EF {
-        let update = update.init()
-        self.init(initialState: update.start(), update: update, effectHandler: effectHandler)
-    }
     
     init(
         initialState: S,

@@ -7,7 +7,6 @@ public protocol Update {
     
     init()
 
-    func start() -> S
     func first(state: S) -> First<S, EF>
     func handle(event: EV, _ currentState: S) -> UpdateResult<S, EF>
     func handle(result: EF.Result, _ currentState: S) -> UpdateResult<S, EF>
@@ -16,12 +15,6 @@ public protocol Update {
 extension Update {
     public func first(state: S) -> First<S, EF> {
         .initialState(state: state)
-    }
-}
-
-extension Update where S : InitialState {
-    public func start() -> S {
-        .initial
     }
 }
 

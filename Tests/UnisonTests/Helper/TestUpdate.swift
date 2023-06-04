@@ -9,10 +9,6 @@ class TestUpdate: Update {
     
     required init() {}
     
-    func start() -> TestState {
-        .initial
-    }
-    
     func first(state: TestState) -> First<TestState, TestEffect> {
         if let initialEffect = initialEffect {
             return .initialEffect(state: state, effect: initialEffect)

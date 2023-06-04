@@ -14,7 +14,7 @@ extension UnisonView where Self : View {
     public static func create<U: Update, H: EffectHandler>(
         update: U.Type,
         effectHandler: H.Type
-    ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
+    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
         guard let resolver = Unison.resolver else {
             fatalError("Unison Resolver isn't registered.")
         }
@@ -25,14 +25,14 @@ extension UnisonView where Self : View {
         update: U.Type,
         effectHandler: H.Type,
         resolver: Resolver
-    ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
+    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
         create(update: update, effectHandler: effectHandler.create(using: resolver))
     }
     
     public static func create<U: Update, H: EffectHandler>(
         update: U.Type,
         effectHandler: H
-    ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
+    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
             unison: UnisionDispatcher(update: update, effectHandler: effectHandler),
             Self.self
