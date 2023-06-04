@@ -25,6 +25,7 @@
 		B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */; };
 		B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E847229ABB0F5003A38A2 /* TimerViewState.swift */; };
 		B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */; };
+		B995DFEC2A2CCCB60019690D /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995DFEB2A2CCCB60019690D /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B98E847229ABB0F5003A38A2 /* TimerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewState.swift; sourceTree = "<group>"; };
 		B98E847829ABC05B003A38A2 /* UnisonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUpdateTests.swift; sourceTree = "<group>"; };
+		B995DFEB2A2CCCB60019690D /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				B9017F1929AF8E11002338C9 /* String+Email.swift */,
 				B90E202229B0163B001CC990 /* ActivityIndicator.swift */,
+				B995DFEB2A2CCCB60019690D /* LazyView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */,
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
 				B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */,
+				B995DFEC2A2CCCB60019690D /* LazyView.swift in Sources */,
 				B9017F1029AF884A002338C9 /* LoginView.swift in Sources */,
 				B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */,
 				B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */,

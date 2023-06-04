@@ -2,9 +2,12 @@ import Unison
 import SwiftDependencyContainer
 
 struct Dependencies {
+    
+    private static let demo = DependencyContainer()
+    
     static func setup() {
-        try! DependencyContainer.default.add { LoginApi() }
+        try! demo.add { LoginApi() }
         
-        Unison.register(resolver: DependencyContainer.default)
+        Unison.register(resolver: demo)
     }
 }
