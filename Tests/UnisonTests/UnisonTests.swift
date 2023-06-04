@@ -3,7 +3,7 @@ import XCTest
 
 final class UnisonTests: XCTestCase {
     
-    typealias Sut = Unison<TestState, TestUpdate, TestEvent, TestEffectHandler>
+    typealias Sut = UnisionDispatcher<TestState, TestUpdate, TestEvent, TestEffectHandler>
     
     var update: TestUpdate!
     var effectHandler: TestEffectHandler!
@@ -150,15 +150,12 @@ final class UnisonTests: XCTestCase {
     // MARK: - Helper
     
     private func createSut(initialEffect: TestEffect? = nil) -> Sut {
-        update = TestUpdate()
         effectHandler = TestEffectHandler()
         
+        update = TestUpdate()
         update.initialEffect = initialEffect
         
-        return Unison(
-            update: update,
-            effectHandler: effectHandler
-        )
+        return UnisionDispatcher(initialState: .initial, update: update, effectHandler: effectHandler)
     }
     
     private func setupSpy(fulfillmentCount: Int, sut: Sut) {

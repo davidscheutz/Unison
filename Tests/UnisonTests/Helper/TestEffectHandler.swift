@@ -1,7 +1,10 @@
 import Unison
 import Foundation
 
-class TestEffectHandler: EffectHandler {
+final class TestEffectHandler: EffectHandler {
+    static func create(using resolver: Resolver) -> TestEffectHandler {
+        TestEffectHandler()
+    }
     
     // Test config
     var result: String?

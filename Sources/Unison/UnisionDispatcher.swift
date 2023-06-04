@@ -11,33 +11,23 @@ final class UnisionDispatcher<S: Equatable, U: Update, EV, H: EffectHandler>: Ob
     private var started = false
     private var runningTasks = [Task<Void, Never>]()
     
-    init(
-        initialState: S,
-        update: U.Type,
-        effectHandler: H
-    ) where U.S == S, U.EV == EV, U.EF == H.EF {
-        self.update = update.init()
-        self.state = initialState
-        self.effectHandler = effectHandler
-    }
-    
-    init(
+    convenience init(
         update: U.Type,
         effectHandler: H
     ) where S: InitialState, U.S == S, U.EV == EV, U.EF == H.EF {
-        self.update = update.init()
-        self.state = S.initial
-        self.effectHandler = effectHandler
+        self.init(initialState: .initial, update: update.init(), effectHandler: effectHandler)
     }
     
+    
     init(
+        initialState: S,
         update: U,
         effectHandler: H
-    ) where U : InitialUpdate, U.S == S, U.EV == EV, U.EF == H.EF {
+    ) where U.S == S, U.EV == EV, U.EF == H.EF {
         self.update = update
         self.effectHandler = effectHandler
         
-        switch update.first() {
+        switch update.first(state: initialState) {
         case .initialState(let state):
             self.state = state
         case .initialEffect(let state, let effect):

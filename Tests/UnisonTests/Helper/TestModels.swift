@@ -10,6 +10,7 @@ struct TestState: Equatable {
     static let initial = TestState(value1: "", value2: false, value3: 0, asyncResult: nil, asyncError: nil)
 }
 
+// TODO: make SmartCopy work
 extension TestState {
     func copy(value1: String? = nil,  value2: Bool? = nil, value3: Int? = nil, asyncResult: String? = nil, asyncError: String? = nil) -> Self {
         .init(
@@ -34,9 +35,7 @@ enum TestEvent: Equatable {
 enum TestEffect: Effect, Equatable {
     case asyncWork
     case multipleResults(count: Int)
-}
 
-extension TestEffect {
     enum Result {
         case success(result: String)
         case failure(error: String)
