@@ -11,6 +11,10 @@ enum LoginEffect: Effect {
     }
 }
 
+protocol LoginApi {
+    func login(username: String, password: String) async throws
+}
+
 final class LoginEffectHandler: EffectHandler {
     
     private let errorDuration: TimeInterval = 3

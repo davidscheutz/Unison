@@ -60,7 +60,7 @@ extension LoginView {
     @ViewBuilder
     private func button() -> some View {
         if state.isLoading {
-            ActivityIndicator()
+            ProgressView()
         } else {
             Button(action: { handler(.login) }) {
                 HStack {
