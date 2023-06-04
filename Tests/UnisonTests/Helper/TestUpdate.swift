@@ -1,7 +1,7 @@
 import Unison
 import Foundation
 
-class TestUpdate: Update, InitialUpdate {
+class TestUpdate: Update {
     
     // Test config
     var initialEffect: TestEffect?
@@ -9,13 +9,15 @@ class TestUpdate: Update, InitialUpdate {
     
     required init() {}
     
-    func first() -> First<TestState, TestEffect> {
-        let initialState = TestState.initial
-        
+    func start() -> TestState {
+        .initial
+    }
+    
+    func first(state: TestState) -> First<TestState, TestEffect> {
         if let initialEffect = initialEffect {
-            return .initialEffect(state: initialState, effect: initialEffect)
+            return .initialEffect(state: state, effect: initialEffect)
         } else {
-            return .initialState(state: initialState)
+            return .initialState(state: state)
         }
     }
     

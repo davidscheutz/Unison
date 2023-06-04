@@ -8,11 +8,10 @@ enum TimerEvent {
     case durationChanged(duration: TimeInterval)
 }
 
-final class TimerUpdate: Update, InitialUpdate {
+final class TimerUpdate: Update {
     
-    func first() -> First<TimerViewState, TimerEffect> {
-        let initial = TimerViewState(state: .idle, duration: 60, elapsed: 0, minDuration: 5, maxDuration: 60 * 5)
-        return .initialState(state: initial)
+    func start() -> TimerViewState {
+        TimerViewState(state: .idle, duration: 60, elapsed: 0, minDuration: 5, maxDuration: 60 * 5)
     }
     
     func handle(event: TimerEvent, _ currentState: TimerViewState) -> UpdateResult<TimerViewState, TimerEffect> {
