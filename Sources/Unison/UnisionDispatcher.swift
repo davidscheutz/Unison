@@ -1,10 +1,10 @@
 import Foundation
 
-final class Unison<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObject
+final class UnisionDispatcher<S: Equatable, U: Update, EV, H: EffectHandler>: ObservableObject
     where U.S == S, U.EV == EV, U.EF == H.EF {
     
     @Published private(set) var state: S
-        
+    
     private let update: U
     private let effectHandler: H
     private var initialEffect: U.EF?

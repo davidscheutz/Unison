@@ -13,6 +13,9 @@ enum TimerEffect: Effect {
 }
 
 final class TimerEffectHandler: EffectHandler {
+    static func create(using resolver: Resolver) -> TimerEffectHandler {
+        TimerEffectHandler()
+    }
     
     private var timer: Timer?
     private let interval: TimeInterval = 0.5

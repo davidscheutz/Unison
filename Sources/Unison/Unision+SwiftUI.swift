@@ -10,12 +10,49 @@ public protocol UnisonView {
 }
 
 extension UnisonView where Self : View {
+    
+    public static func create<U: Update, H: EffectHandler>(
+        update: U.Type,
+        effectHandler: H.Type
+    ) -> some View where U : InitialUpdate, U.S == State, U.EV == Event, U.EF == H.EF {
+        guard let resolver = Unison.resolver else {
+            fatalError("Unison Resolver isn't registered.")
+        }
+        return create(update: update, effectHandler: effectHandler, resolver: resolver)
+    }
+    
+    public static func create<U: Update, H: EffectHandler>(
+        update: U.Type,
+        effectHandler: H.Type
+    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
+        guard let resolver = Unison.resolver else {
+            fatalError("Unison Resolver isn't registered.")
+        }
+        return create(update: update, effectHandler: effectHandler, resolver: resolver)
+    }
+    
+    public static func create<U: Update, H: EffectHandler>(
+        update: U.Type,
+        effectHandler: H.Type,
+        resolver: Resolver
+    ) -> some View where U : InitialUpdate, U.S == State, U.EV == Event, U.EF == H.EF {
+        create(update: update, effectHandler: effectHandler.create(using: resolver))
+    }
+    
+    public static func create<U: Update, H: EffectHandler>(
+        update: U.Type,
+        effectHandler: H.Type,
+        resolver: Resolver
+    ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
+        create(update: update, effectHandler: effectHandler.create(using: resolver))
+    }
+    
     public static func create<U: Update, H: EffectHandler>(
         update: U.Type,
         effectHandler: H
     ) -> some View where U : InitialUpdate, U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
-            unison: Unison(update: update.init(), effectHandler: effectHandler),
+            unison: UnisionDispatcher(update: update.init(), effectHandler: effectHandler),
             Self.self
         )
     }
@@ -25,7 +62,7 @@ extension UnisonView where Self : View {
         effectHandler: H
     ) -> some View where State : InitialState, U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
-            unison: Unison(update: update, effectHandler: effectHandler),
+            unison: UnisionDispatcher(update: update, effectHandler: effectHandler),
             Self.self
         )
     }
@@ -36,7 +73,7 @@ extension UnisonView where Self : View {
         effectHandler: H
     ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
         UnisonContainerView(
-            unison: Unison(initialState: initialState, update: update, effectHandler: effectHandler),
+            unison: UnisionDispatcher(initialState: initialState, update: update, effectHandler: effectHandler),
             Self.self
         )
     }
@@ -45,7 +82,7 @@ extension UnisonView where Self : View {
 struct UnisonContainerView<U: Update, H: EffectHandler, Child: UnisonView & View>: View
     where U.S == Child.State, U.EV == Child.Event, U.EF == H.EF {
     
-    typealias Parent = Unison<Child.State, U, Child.Event, H>
+    typealias Parent = UnisionDispatcher<Child.State, U, Child.Event, H>
     
     @StateObject var unison: Parent
     

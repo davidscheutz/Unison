@@ -18,12 +18,14 @@
 		B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DAB29A27EC800BCD415 /* ContentView.swift */; };
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
 		B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A9C1E29B827C80073801F /* LoginApi.swift */; };
+		B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968E7AE2A2773F300B62407 /* Dependencies.swift */; };
 		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
 		B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846C29ABAAD8003A38A2 /* TimerUpdate.swift */; };
 		B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846E29ABAB34003A38A2 /* TimerEffectHandler.swift */; };
 		B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E847229ABB0F5003A38A2 /* TimerViewState.swift */; };
 		B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */; };
+		B995DFEC2A2CCCB60019690D /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995DFEB2A2CCCB60019690D /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B93A9C1E29B827C80073801F /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		B968E7AE2A2773F300B62407 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B98E846A29ABAAC0003A38A2 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		B98E847229ABB0F5003A38A2 /* TimerViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewState.swift; sourceTree = "<group>"; };
 		B98E847829ABC05B003A38A2 /* UnisonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUpdateTests.swift; sourceTree = "<group>"; };
+		B995DFEB2A2CCCB60019690D /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				B9017F1929AF8E11002338C9 /* String+Email.swift */,
 				B90E202229B0163B001CC990 /* ActivityIndicator.swift */,
+				B995DFEB2A2CCCB60019690D /* LazyView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				B985E70C29B555330042AD8B /* Info.plist */,
 				B9202DA929A27EC800BCD415 /* UnisonApp.swift */,
+				B968E7AE2A2773F300B62407 /* Dependencies.swift */,
 				B9202DAB29A27EC800BCD415 /* ContentView.swift */,
 				B9202DD429A27F4500BCD415 /* Examples */,
 				B9017F1829AF8E05002338C9 /* Helper */,
@@ -281,8 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */,
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
 				B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */,
+				B995DFEC2A2CCCB60019690D /* LazyView.swift in Sources */,
 				B9017F1029AF884A002338C9 /* LoginView.swift in Sources */,
 				B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */,
 				B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */,

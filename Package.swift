@@ -12,10 +12,15 @@ let package = Package(
         .library(name: "Unison", targets: ["Unison"]),
         .plugin(name: "CodeGeneratorPlugin", targets: ["CodeGeneratorPlugin"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/davidscheutz/SwiftDependencyContainer.git", from: "0.1.0")
+    ],
     targets: [
         .target(
-            name: "Unison"
+            name: "Unison",
+            dependencies: [
+                .product(name: "SwiftDependencyContainer", package: "SwiftDependencyContainer")
+            ]
         ),
         .plugin(
             name: "CodeGeneratorPlugin",

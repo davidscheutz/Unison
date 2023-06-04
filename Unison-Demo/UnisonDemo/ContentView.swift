@@ -29,26 +29,14 @@ extension ContentView {
         case .login:
             LoginView.create(
                 update: LoginUpdate.self,
-                effectHandler: LoginEffectHandler(api: LoginApi())
+                effectHandler: LoginEffectHandler.self
             )
         case .timer:
             TimerView.create(
                 update: TimerUpdate.self,
-                effectHandler: TimerEffectHandler()
+                effectHandler: TimerEffectHandler.self
             )
         }
-    }
-}
-
-struct LazyView<Content: View>: View {
-    let build: () -> Content
-    
-    init(_ build: @autoclosure @escaping () -> Content) {
-        self.build = build
-    }
-    
-    var body: Content {
-        build()
     }
 }
 

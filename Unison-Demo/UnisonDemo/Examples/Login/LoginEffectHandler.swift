@@ -1,5 +1,6 @@
 import Foundation
 import Unison
+import SwiftDependencyContainer
 
 enum LoginEffect: Effect {
     case login(username: String, password: String)
@@ -15,8 +16,12 @@ final class LoginEffectHandler: EffectHandler {
     private let errorDuration: TimeInterval = 3
     private let api: LoginApi
     
-    init(api: LoginApi) {
+    private init(api: LoginApi) {
         self.api = api
+    }
+    
+    static func create(using resolver: Resolver) -> LoginEffectHandler {
+        .init(api: resolver.inferred())
     }
     
     func handle(_ effect: LoginEffect) async -> EffectResult<LoginEffect.Result> {
