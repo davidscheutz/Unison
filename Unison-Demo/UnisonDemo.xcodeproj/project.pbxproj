@@ -22,6 +22,11 @@
 		B96183252A2D255600E67197 /* ListUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183242A2D255600E67197 /* ListUpdate.swift */; };
 		B96183272A2D27E600E67197 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183262A2D27E600E67197 /* ListView.swift */; };
 		B96183292A2D501B00E67197 /* View+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183282A2D501B00E67197 /* View+Apply.swift */; };
+		B961832C2A2E02F400E67197 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832B2A2E02F400E67197 /* ListDetailView.swift */; };
+		B961832E2A2E046F00E67197 /* ListDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832D2A2E046F00E67197 /* ListDetailState.swift */; };
+		B96183302A2E049100E67197 /* ListDetailUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832F2A2E049100E67197 /* ListDetailUpdate.swift */; };
+		B96183322A2E057200E67197 /* ListDetailEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */; };
+		B96183342A2E0E9000E67197 /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183332A2E0E9000E67197 /* Task+Sleep.swift */; };
 		B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968E7AE2A2773F300B62407 /* Dependencies.swift */; };
 		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
@@ -59,6 +64,11 @@
 		B96183242A2D255600E67197 /* ListUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpdate.swift; sourceTree = "<group>"; };
 		B96183262A2D27E600E67197 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		B96183282A2D501B00E67197 /* View+Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Apply.swift"; sourceTree = "<group>"; };
+		B961832B2A2E02F400E67197 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
+		B961832D2A2E046F00E67197 /* ListDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailState.swift; sourceTree = "<group>"; };
+		B961832F2A2E049100E67197 /* ListDetailUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailUpdate.swift; sourceTree = "<group>"; };
+		B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailEffectHandler.swift; sourceTree = "<group>"; };
+		B96183332A2E0E9000E67197 /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
 		B968E7AE2A2773F300B62407 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 				B995DFEB2A2CCCB60019690D /* LazyView.swift */,
 				B93A9C1E29B827C80073801F /* ApiClient.swift */,
 				B96183282A2D501B00E67197 /* View+Apply.swift */,
+				B96183332A2E0E9000E67197 /* Task+Sleep.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -174,12 +185,24 @@
 		B961831F2A2D1FBA00E67197 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				B961832A2A2E02E300E67197 /* Detail */,
 				B96183262A2D27E600E67197 /* ListView.swift */,
 				B96183202A2D1FCA00E67197 /* ListState.swift */,
 				B96183242A2D255600E67197 /* ListUpdate.swift */,
 				B96183222A2D21B600E67197 /* ListEffectHandler.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		B961832A2A2E02E300E67197 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B961832B2A2E02F400E67197 /* ListDetailView.swift */,
+				B961832D2A2E046F00E67197 /* ListDetailState.swift */,
+				B961832F2A2E049100E67197 /* ListDetailUpdate.swift */,
+				B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B98E846829ABAA1E003A38A2 /* Timer */ = {
@@ -309,6 +332,9 @@
 			files = (
 				B96183252A2D255600E67197 /* ListUpdate.swift in Sources */,
 				B96183272A2D27E600E67197 /* ListView.swift in Sources */,
+				B96183342A2E0E9000E67197 /* Task+Sleep.swift in Sources */,
+				B96183322A2E057200E67197 /* ListDetailEffectHandler.swift in Sources */,
+				B961832E2A2E046F00E67197 /* ListDetailState.swift in Sources */,
 				B96183232A2D21B600E67197 /* ListEffectHandler.swift in Sources */,
 				B96183292A2D501B00E67197 /* View+Apply.swift in Sources */,
 				B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */,
@@ -324,6 +350,8 @@
 				B9017F1229AF886A002338C9 /* LoginViewState.swift in Sources */,
 				B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */,
 				B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */,
+				B961832C2A2E02F400E67197 /* ListDetailView.swift in Sources */,
+				B96183302A2E049100E67197 /* ListDetailUpdate.swift in Sources */,
 				B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */,
 				B9017F1429AF88F9002338C9 /* LoginUpdate.swift in Sources */,
 			);

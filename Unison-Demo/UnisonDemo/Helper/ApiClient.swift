@@ -26,6 +26,6 @@ final class ApiClient: LoginApi, ListApi {
     }
     
     private func sleep(_ seconds: Double) async {
-        try? await Task.sleep(nanoseconds: UInt64(seconds * 1_000_000_000))
+        await Task.sleep(seconds: seconds)
     }
 }

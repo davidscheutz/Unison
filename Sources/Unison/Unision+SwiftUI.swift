@@ -22,6 +22,17 @@ extension UnisonView where Self : View {
     }
     
     public static func create<U: Update, H: EffectHandler>(
+        initialState: State,
+        update: U.Type,
+        effectHandler: H.Type
+    ) -> some View where U.S == State, U.EV == Event, U.EF == H.EF {
+        guard let resolver = Unison.resolver else {
+            fatalError("Unison Resolver isn't registered.")
+        }
+        return create(initialState: initialState, update: update, effectHandler: effectHandler.create(using: resolver))
+    }
+    
+    public static func create<U: Update, H: EffectHandler>(
         update: U.Type,
         effectHandler: H.Type,
         resolver: Resolver

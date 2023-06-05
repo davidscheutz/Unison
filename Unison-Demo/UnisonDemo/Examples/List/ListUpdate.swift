@@ -2,7 +2,6 @@ import Unison
 
 enum ListEvent {
     case loadNextPage
-    case didSelectItem(id: String)
 }
 
 final class ListUpdate: Update {
@@ -18,9 +17,6 @@ final class ListUpdate: Update {
                 return .noChange
             }
             return .dispatchEffect(state: currentState.copy(isLoading: true), effect: .LoadPage(currentState.currentPage))
-        case .didSelectItem(let id):
-            // TODO
-            return .noChange
         }
     }
     
