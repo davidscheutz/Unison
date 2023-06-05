@@ -9,4 +9,11 @@ extension View {
             self
         }
     }
+    
+    @ViewBuilder
+    func isHidden(_ hidden: Bool) -> some View {
+        if !hidden {
+            self
+        }
+    }
 }

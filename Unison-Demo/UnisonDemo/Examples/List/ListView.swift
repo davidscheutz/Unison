@@ -6,11 +6,20 @@ struct ListView: View, UnisonView {
     let handler: (ListEvent) -> Void
     
     var body: some View {
-        List {
-            ForEach(state.data) { item in
-                NavigationLink(destination: LazyView(detail(for: item))) {
-                    view(for: item)
+        ScrollView {
+            LazyVStack(alignment: .leading) {
+                ForEach(state.data) { item in
+                    NavigationLink(destination: LazyView(detail(for: item))) {
+                        view(for: item)
+                    }
+                    .buttonStyle(.plain)
+                    
+                    Divider()
                 }
+                
+                loadingErrorView()
+                    .isHidden(state.data.isEmpty)
+                    .padding([.top, .leading])
             }
         }
         .overlay { if state.data.isEmpty { loadingErrorView() } }
@@ -23,14 +32,12 @@ extension ListView {
         let isLast = state.data.last == item
         
         return Text(item.title)
-            .id(item.id)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
             .apply(isLast) { view in
                 VStack(alignment: .leading) {
-                    view
-                    loadingErrorView().padding(.leading)
+                    view.onAppear { handler(.loadNextPage) }
                 }
-                .onAppear { handler(.loadNextPage) }
             }
     }
     

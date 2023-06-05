@@ -21,7 +21,7 @@
 		B96183232A2D21B600E67197 /* ListEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183222A2D21B600E67197 /* ListEffectHandler.swift */; };
 		B96183252A2D255600E67197 /* ListUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183242A2D255600E67197 /* ListUpdate.swift */; };
 		B96183272A2D27E600E67197 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183262A2D27E600E67197 /* ListView.swift */; };
-		B96183292A2D501B00E67197 /* View+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183282A2D501B00E67197 /* View+Apply.swift */; };
+		B96183292A2D501B00E67197 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183282A2D501B00E67197 /* View+.swift */; };
 		B961832C2A2E02F400E67197 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832B2A2E02F400E67197 /* ListDetailView.swift */; };
 		B961832E2A2E046F00E67197 /* ListDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832D2A2E046F00E67197 /* ListDetailState.swift */; };
 		B96183302A2E049100E67197 /* ListDetailUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832F2A2E049100E67197 /* ListDetailUpdate.swift */; };
@@ -63,7 +63,7 @@
 		B96183222A2D21B600E67197 /* ListEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEffectHandler.swift; sourceTree = "<group>"; };
 		B96183242A2D255600E67197 /* ListUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpdate.swift; sourceTree = "<group>"; };
 		B96183262A2D27E600E67197 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		B96183282A2D501B00E67197 /* View+Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Apply.swift"; sourceTree = "<group>"; };
+		B96183282A2D501B00E67197 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		B961832B2A2E02F400E67197 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 		B961832D2A2E046F00E67197 /* ListDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailState.swift; sourceTree = "<group>"; };
 		B961832F2A2E049100E67197 /* ListDetailUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailUpdate.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 				B9017F1929AF8E11002338C9 /* String+Email.swift */,
 				B995DFEB2A2CCCB60019690D /* LazyView.swift */,
 				B93A9C1E29B827C80073801F /* ApiClient.swift */,
-				B96183282A2D501B00E67197 /* View+Apply.swift */,
+				B96183282A2D501B00E67197 /* View+.swift */,
 				B96183332A2E0E9000E67197 /* Task+Sleep.swift */,
 			);
 			path = Helper;
@@ -336,7 +336,7 @@
 				B96183322A2E057200E67197 /* ListDetailEffectHandler.swift in Sources */,
 				B961832E2A2E046F00E67197 /* ListDetailState.swift in Sources */,
 				B96183232A2D21B600E67197 /* ListEffectHandler.swift in Sources */,
-				B96183292A2D501B00E67197 /* View+Apply.swift in Sources */,
+				B96183292A2D501B00E67197 /* View+.swift in Sources */,
 				B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */,
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
 				B93A9C1F29B827C80073801F /* ApiClient.swift in Sources */,
