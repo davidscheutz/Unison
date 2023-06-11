@@ -18,4 +18,12 @@ class ListUpdateTests: XCTestCase {
         XCTAssertEqual(result.currentPage, 2)
         XCTAssertEqual(result.data, items)
     }
+    
+    func test_loadOnlyOnePageAtATime() {
+        let sut = ListUpdate()
+        
+        let result = sut.handle(event: .loadNextPage, .initial.copy(isLoading: true))
+        
+        XCTAssertEqual(result, .noChange)
+    }
 }

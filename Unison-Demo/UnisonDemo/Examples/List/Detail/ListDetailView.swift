@@ -55,7 +55,7 @@ struct ListDetailView_Previews: PreviewProvider {
         render(detail: .failed("Preview Error"))
     }
     
-    static func render(detail: LoadableData<ListDetail, String>) -> some View {
+    static func render(detail: Loadable<ListDetail, String>) -> some View {
         NavigationView {
             ListDetailView(state: .init(id: "", title: "Title", data: detail), handler: { _ in })
         }
