@@ -27,6 +27,7 @@
 		B96183302A2E049100E67197 /* ListDetailUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832F2A2E049100E67197 /* ListDetailUpdate.swift */; };
 		B96183322A2E057200E67197 /* ListDetailEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */; };
 		B96183342A2E0E9000E67197 /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183332A2E0E9000E67197 /* Task+Sleep.swift */; };
+		B96183362A2E154D00E67197 /* ListUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183352A2E154D00E67197 /* ListUpdateTests.swift */; };
 		B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968E7AE2A2773F300B62407 /* Dependencies.swift */; };
 		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
@@ -69,6 +70,7 @@
 		B961832F2A2E049100E67197 /* ListDetailUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailUpdate.swift; sourceTree = "<group>"; };
 		B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailEffectHandler.swift; sourceTree = "<group>"; };
 		B96183332A2E0E9000E67197 /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
+		B96183352A2E154D00E67197 /* ListUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpdateTests.swift; sourceTree = "<group>"; };
 		B968E7AE2A2773F300B62407 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */,
 				B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */,
+				B96183352A2E154D00E67197 /* ListUpdateTests.swift */,
 			);
 			path = UnisonDemoTests;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			files = (
 				B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */,
 				B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */,
+				B96183362A2E154D00E67197 /* ListUpdateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

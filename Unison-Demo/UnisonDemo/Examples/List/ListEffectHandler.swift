@@ -2,7 +2,7 @@ import Foundation
 import Unison
 
 enum ListEffect: Effect {
-    case LoadPage(Int)
+    case LoadPage(Int, size: Int)
     
     enum Result {
         case PageLoaded(page: Int, data: [DemoListItem])
@@ -28,9 +28,9 @@ final class ListEffectHandler: EffectHandler {
     
     func handle(_ effect: ListEffect) async -> EffectResult<ListEffect.Result> {
         switch effect {
-        case .LoadPage(let page):
+        case .LoadPage(let page, let size):
             do {
-                let newData = try await api.load(page: page, size: 20)
+                let newData = try await api.load(page: page, size: size)
                 return .single(.PageLoaded(page: page, data: newData))
             } catch {
                 return .single(.ApiError)

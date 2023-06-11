@@ -6,8 +6,10 @@ enum ListEvent {
 
 final class ListUpdate: Update {
     
+    private let pageSize = 20
+    
     func first(state: ListState) -> First<ListState, ListEffect> {
-        .initialEffect(state: state.copy(isLoading: true), effect: .LoadPage(state.currentPage))
+        .initialEffect(state: state.copy(isLoading: true), effect: .LoadPage(state.currentPage, size: pageSize))
     }
     
     func handle(event: ListEvent, _ currentState: ListState) -> UpdateResult<ListState, ListEffect> {
@@ -16,7 +18,7 @@ final class ListUpdate: Update {
             guard !currentState.isLoading else {
                 return .noChange
             }
-            return .dispatchEffect(state: currentState.copy(isLoading: true), effect: .LoadPage(currentState.currentPage))
+            return .dispatchEffect(state: currentState.copy(isLoading: true), effect: .LoadPage(currentState.currentPage, size: pageSize))
         }
     }
     
