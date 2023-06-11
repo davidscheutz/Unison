@@ -13,7 +13,7 @@ public protocol Effect: Equatable {
 }
 
 public enum EffectResult<Result> {
-    case repeating(AsyncStream<Result>)
-    case single(Result)
+    case repeating(AsyncStream<Result>) // TODO: rename to 'continuation'
+    case single(Result) // TODO: rename to 'completed'
     case empty
 }

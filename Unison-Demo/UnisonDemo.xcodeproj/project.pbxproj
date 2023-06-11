@@ -13,11 +13,22 @@
 		B9017F1629AF8941002338C9 /* LoginEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */; };
 		B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9017F1929AF8E11002338C9 /* String+Email.swift */; };
 		B909B6BD29A41BD900F68A3E /* Unison in Frameworks */ = {isa = PBXBuildFile; productRef = B909B6BC29A41BD900F68A3E /* Unison */; };
-		B90E202329B0163B001CC990 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90E202229B0163B001CC990 /* ActivityIndicator.swift */; };
 		B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DA929A27EC800BCD415 /* UnisonApp.swift */; };
 		B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9202DAB29A27EC800BCD415 /* ContentView.swift */; };
 		B9202DAE29A27ECA00BCD415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9202DAD29A27ECA00BCD415 /* Assets.xcassets */; };
-		B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A9C1E29B827C80073801F /* LoginApi.swift */; };
+		B93A9C1F29B827C80073801F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93A9C1E29B827C80073801F /* ApiClient.swift */; };
+		B96183212A2D1FCA00E67197 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183202A2D1FCA00E67197 /* ListState.swift */; };
+		B96183232A2D21B600E67197 /* ListEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183222A2D21B600E67197 /* ListEffectHandler.swift */; };
+		B96183252A2D255600E67197 /* ListUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183242A2D255600E67197 /* ListUpdate.swift */; };
+		B96183272A2D27E600E67197 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183262A2D27E600E67197 /* ListView.swift */; };
+		B96183292A2D501B00E67197 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183282A2D501B00E67197 /* View+.swift */; };
+		B961832C2A2E02F400E67197 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832B2A2E02F400E67197 /* ListDetailView.swift */; };
+		B961832E2A2E046F00E67197 /* ListDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832D2A2E046F00E67197 /* ListDetailState.swift */; };
+		B96183302A2E049100E67197 /* ListDetailUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B961832F2A2E049100E67197 /* ListDetailUpdate.swift */; };
+		B96183322A2E057200E67197 /* ListDetailEffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */; };
+		B96183342A2E0E9000E67197 /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183332A2E0E9000E67197 /* Task+Sleep.swift */; };
+		B96183362A2E154D00E67197 /* ListUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183352A2E154D00E67197 /* ListUpdateTests.swift */; };
+		B96183382A36701100E67197 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183372A36701100E67197 /* Loadable.swift */; };
 		B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968E7AE2A2773F300B62407 /* Dependencies.swift */; };
 		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
@@ -45,12 +56,23 @@
 		B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEffectHandler.swift; sourceTree = "<group>"; };
 		B9017F1929AF8E11002338C9 /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
 		B909B6BA29A41B9400F68A3E /* Unison */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Unison; path = ..; sourceTree = "<group>"; };
-		B90E202229B0163B001CC990 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B9202DA629A27EC800BCD415 /* UnisonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnisonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9202DA929A27EC800BCD415 /* UnisonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisonApp.swift; sourceTree = "<group>"; };
 		B9202DAB29A27EC800BCD415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9202DAD29A27ECA00BCD415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B93A9C1E29B827C80073801F /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		B93A9C1E29B827C80073801F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		B96183202A2D1FCA00E67197 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
+		B96183222A2D21B600E67197 /* ListEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEffectHandler.swift; sourceTree = "<group>"; };
+		B96183242A2D255600E67197 /* ListUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpdate.swift; sourceTree = "<group>"; };
+		B96183262A2D27E600E67197 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		B96183282A2D501B00E67197 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		B961832B2A2E02F400E67197 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
+		B961832D2A2E046F00E67197 /* ListDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailState.swift; sourceTree = "<group>"; };
+		B961832F2A2E049100E67197 /* ListDetailUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailUpdate.swift; sourceTree = "<group>"; };
+		B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailEffectHandler.swift; sourceTree = "<group>"; };
+		B96183332A2E0E9000E67197 /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
+		B96183352A2E154D00E67197 /* ListUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpdateTests.swift; sourceTree = "<group>"; };
+		B96183372A36701100E67197 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		B968E7AE2A2773F300B62407 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +111,6 @@
 				B9017F1129AF886A002338C9 /* LoginViewState.swift */,
 				B9017F1329AF88F9002338C9 /* LoginUpdate.swift */,
 				B9017F1529AF8941002338C9 /* LoginEffectHandler.swift */,
-				B93A9C1E29B827C80073801F /* LoginApi.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -98,8 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				B9017F1929AF8E11002338C9 /* String+Email.swift */,
-				B90E202229B0163B001CC990 /* ActivityIndicator.swift */,
 				B995DFEB2A2CCCB60019690D /* LazyView.swift */,
+				B93A9C1E29B827C80073801F /* ApiClient.swift */,
+				B96183282A2D501B00E67197 /* View+.swift */,
+				B96183332A2E0E9000E67197 /* Task+Sleep.swift */,
+				B96183372A36701100E67197 /* Loadable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -158,8 +182,32 @@
 			children = (
 				B9017F0E29AF883D002338C9 /* Login */,
 				B98E846829ABAA1E003A38A2 /* Timer */,
+				B961831F2A2D1FBA00E67197 /* List */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		B961831F2A2D1FBA00E67197 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B961832A2A2E02E300E67197 /* Detail */,
+				B96183262A2D27E600E67197 /* ListView.swift */,
+				B96183202A2D1FCA00E67197 /* ListState.swift */,
+				B96183242A2D255600E67197 /* ListUpdate.swift */,
+				B96183222A2D21B600E67197 /* ListEffectHandler.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		B961832A2A2E02E300E67197 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B961832B2A2E02F400E67197 /* ListDetailView.swift */,
+				B961832D2A2E046F00E67197 /* ListDetailState.swift */,
+				B961832F2A2E049100E67197 /* ListDetailUpdate.swift */,
+				B96183312A2E057200E67197 /* ListDetailEffectHandler.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B98E846829ABAA1E003A38A2 /* Timer */ = {
@@ -178,6 +226,7 @@
 			children = (
 				B98E847A29ABC05B003A38A2 /* TimerUpdateTests.swift */,
 				B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */,
+				B96183352A2E154D00E67197 /* ListUpdateTests.swift */,
 			);
 			path = UnisonDemoTests;
 			sourceTree = "<group>";
@@ -287,19 +336,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B96183252A2D255600E67197 /* ListUpdate.swift in Sources */,
+				B96183272A2D27E600E67197 /* ListView.swift in Sources */,
+				B96183342A2E0E9000E67197 /* Task+Sleep.swift in Sources */,
+				B96183322A2E057200E67197 /* ListDetailEffectHandler.swift in Sources */,
+				B961832E2A2E046F00E67197 /* ListDetailState.swift in Sources */,
+				B96183232A2D21B600E67197 /* ListEffectHandler.swift in Sources */,
+				B96183292A2D501B00E67197 /* View+.swift in Sources */,
 				B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */,
 				B9202DAC29A27EC800BCD415 /* ContentView.swift in Sources */,
-				B93A9C1F29B827C80073801F /* LoginApi.swift in Sources */,
+				B96183382A36701100E67197 /* Loadable.swift in Sources */,
+				B93A9C1F29B827C80073801F /* ApiClient.swift in Sources */,
 				B995DFEC2A2CCCB60019690D /* LazyView.swift in Sources */,
 				B9017F1029AF884A002338C9 /* LoginView.swift in Sources */,
 				B9017F1A29AF8E11002338C9 /* String+Email.swift in Sources */,
 				B98E846F29ABAB34003A38A2 /* TimerEffectHandler.swift in Sources */,
-				B90E202329B0163B001CC990 /* ActivityIndicator.swift in Sources */,
+				B96183212A2D1FCA00E67197 /* ListState.swift in Sources */,
 				B9017F1629AF8941002338C9 /* LoginEffectHandler.swift in Sources */,
 				B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */,
 				B9017F1229AF886A002338C9 /* LoginViewState.swift in Sources */,
 				B9202DAA29A27EC800BCD415 /* UnisonApp.swift in Sources */,
 				B98E847329ABB0F5003A38A2 /* TimerViewState.swift in Sources */,
+				B961832C2A2E02F400E67197 /* ListDetailView.swift in Sources */,
+				B96183302A2E049100E67197 /* ListDetailUpdate.swift in Sources */,
 				B98E846D29ABAAD8003A38A2 /* TimerUpdate.swift in Sources */,
 				B9017F1429AF88F9002338C9 /* LoginUpdate.swift in Sources */,
 			);
@@ -311,6 +370,7 @@
 			files = (
 				B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */,
 				B98E847B29ABC05B003A38A2 /* TimerUpdateTests.swift in Sources */,
+				B96183362A2E154D00E67197 /* ListUpdateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
