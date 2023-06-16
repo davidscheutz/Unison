@@ -2,7 +2,11 @@
 
 First things first: This is the beginning of a community-driven open-source project actively seeking contributions, be it code, documentation, or ideas.
 
-Unison is a versatile library designed for building applications with consistency and simplicity, harnessing the power of both Functional Programming (FP) and Object-Oriented Programming (OOP). 
+### Overview
+
+Unison is tailored to suit modern development practices. Whether you prefer to prototype and preview the UI first, test-drive it or work based on specifications resulting from a technical planning.
+
+Applications build with Unison are consistent and simple, harnessing the power of both Functional Programming (FP) and Object-Oriented Programming (OOP). 
 
 By incorporating key principles from these paradigms, Unison offers:
 
@@ -13,25 +17,29 @@ By incorporating key principles from these paradigms, Unison offers:
 - **Inheritance**: Promote modularity and code reuse through class hierarchies.
 - **Polymorphism**: Increase flexibility and extensibility with a unified interface for various data types.
 
-These principles facilitate the development of robust, reliable, and bug-free Swift applications. Unison is designed to be compatible with all Apple platforms (iOS, macOS, tvOS, and watchOS).
+These principles facilitate the development of robust, reliable, and bug-free Swift applications. 
 
-Unison currently offers convenient syntax for seamless integration with SwiftUI, and plans are underway to provide similar support for UIKit.
+Unison is compatible with all Apple platforms (iOS, macOS, tvOS, and watchOS) and comes with convenient syntax for seamless integration with SwiftUI.
 
-### Overview
+### Concepts
 
 The Unison framework is based on the Model-Update-Effect (MUE) pattern. MUE emphasizes unidirectional data flow and the separation of state, business logic, and side effects, fostering maintainable and testable applications.
 
 <img src="https://github.com/davidscheutz/Unison/blob/master/Unison.png" alt="Unison" width="300" height="390">
 
-### Benefits of using Unison
+## Demo
 
-Unison is tailored to suit modern development practices, whether you're prototyping your UI, test-driving your app, or engaging in technical planning with your team.
+Not in the mood to read more documentation?
+To see Unison in action, checkout the included demo project that showcases some examples of how to use the framework in real-world-ish scenarios.
 
-Unison's straightforward API for defining reactive systems streamlines collaboration and planning, enabling efficient teamwork.
+<img width="336" alt="Screenshot 2023-06-15 at 21 12 50" src="https://github.com/davidscheutz/Unison/assets/14020916/bf78b04b-df33-4e30-af7a-87ba21240179">
 
-Seamlessly integrated with SwiftUI's previews, Unison allows you to visualize various states of your screen effortlessly.
+To run the demo project, follow these steps:
 
-Ultimately, Unison is designed for efficiency and high performance, ensuring that even large, complex systems remain fast and responsive throughout the development process.
+1. Clone or downlaod the Unison repository
+2. Open the project using Xcode
+3. Select UnisonDemo target
+4. Build and run the project
 
 ## Installation
 
@@ -46,16 +54,14 @@ TODO add more details
 The State component is a model containing all the information required to render the view. It should be immutable, with all fields declared using the `let` keyword.
 
 ```swift
-struct YourViewState: Equatable, SmartCopy, InitialState {
+struct YourViewState: Equatable, SmartCopy {
     let userInput: String
 }
 ```
 
-To facilitate state updates, Unison generates Kotlin-like copy functions for each struct that conforms to the `SmartCopy` protocol.
+Unison generates copy functions for each struct that conforms to the `SmartCopy` protocol.
 
-Implementing the `Equatable` protocol is required by Unison to filter duplicated state updates. 
-
-The `InitialState` protocol is optional, but can be used to provide the initial state used to render the view.
+Implementing the `Equatable` protocol is required by Unison to determine state changes. 
 
 **Event**
 
@@ -135,25 +141,15 @@ struct YourView: View, UnisonView {
 
 ```
 
-`UnisonView` provides a simple class extension to instantiate and connect your view.
+`UnisonView` provides a several extension to instantiate and connect your views.
 
 ```swift
 YourView.create(
-     update: YourUpdate(),
-     effectHandler: YourEffectHandler()
+     initialState: YourViewState(),
+     update: YourUpdate.self,
+     effectHandler: YourEffectHandler.self
 )
 ```
-
-## Demo
-
-To see Unison in action, you can check out the included demo project. The demo project showcases some example of how to use the framework in a real-world-ish scenario.
-
-To run the demo project, follow these steps:
-
-1. Clone the Unison repository
-2. Open the project using Xcode
-3. Select UnisonDemo target
-4. Build and run the project
 
 ## Inpsiration
 
