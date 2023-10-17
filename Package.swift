@@ -9,11 +9,10 @@ let package = Package(
         .iOS(.v14)
     ],
     products: [
-        .library(name: "Unison", targets: ["Unison"]),
-        .plugin(name: "CodeGeneratorPlugin", targets: ["CodeGeneratorPlugin"])
+        .library(name: "Unison", targets: ["Unison"])
     ],
     dependencies: [
-        .package(url: "https://github.com/davidscheutz/SwiftDependencyContainer.git", from: "0.1.0")
+        .package(path: "../SwiftDependencyContainer")
     ],
     targets: [
         .target(
@@ -21,17 +20,6 @@ let package = Package(
             dependencies: [
                 .product(name: "SwiftDependencyContainer", package: "SwiftDependencyContainer")
             ]
-        ),
-        .plugin(
-            name: "CodeGeneratorPlugin",
-            capability: .buildTool(),
-            dependencies: [
-                .target(name: "sourcery")
-            ]
-        ),
-        .binaryTarget(
-            name: "sourcery",
-            path: "Binaries/sourcery.artifactbundle"
         ),
         .testTarget(
             name: "UnisonTests",

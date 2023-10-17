@@ -1,7 +1,8 @@
 import Foundation
 import Unison
+import SwiftCopy
 
-struct TimerViewState: Equatable, SmartCopy, InitialState {
+struct TimerViewState: Equatable, Copyable, InitialState {
     let state: TimerState
     let duration: TimeInterval
     let elapsed: TimeInterval

@@ -1,7 +1,8 @@
 import Foundation
 import Unison
+import SwiftCopy
 
-struct LoginViewState: SmartCopy, InitialState, Equatable {
+struct LoginViewState: Copyable, InitialState, Equatable {
     
     struct Input: Equatable {
         static let empty = Input(value: "", error: nil)

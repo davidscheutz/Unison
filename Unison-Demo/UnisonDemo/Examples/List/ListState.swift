@@ -1,7 +1,8 @@
 import Foundation
 import Unison
+import SwiftCopy
 
-struct ListState: SmartCopy, Equatable {
+struct ListState: Copyable, Equatable {
     let currentPage: Int
     let data: [DemoListItem]
     let isLoading: Bool

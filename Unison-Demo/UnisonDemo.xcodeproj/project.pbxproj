@@ -29,6 +29,7 @@
 		B96183342A2E0E9000E67197 /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183332A2E0E9000E67197 /* Task+Sleep.swift */; };
 		B96183362A2E154D00E67197 /* ListUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183352A2E154D00E67197 /* ListUpdateTests.swift */; };
 		B96183382A36701100E67197 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96183372A36701100E67197 /* Loadable.swift */; };
+		B96291212ADE883300BB9032 /* SwiftCopy in Frameworks */ = {isa = PBXBuildFile; productRef = B96291202ADE883300BB9032 /* SwiftCopy */; };
 		B968E7AF2A2773F300B62407 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968E7AE2A2773F300B62407 /* Dependencies.swift */; };
 		B985E70B29B2F34F0042AD8B /* LoginUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */; };
 		B98E846B29ABAAC0003A38A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98E846A29ABAAC0003A38A2 /* TimerView.swift */; };
@@ -73,6 +74,7 @@
 		B96183332A2E0E9000E67197 /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
 		B96183352A2E154D00E67197 /* ListUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpdateTests.swift; sourceTree = "<group>"; };
 		B96183372A36701100E67197 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		B962911F2ADE882A00BB9032 /* SwiftCopy */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftCopy; path = ../../SwiftCopy; sourceTree = "<group>"; };
 		B968E7AE2A2773F300B62407 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		B985E70A29B2F34F0042AD8B /* LoginUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateTests.swift; sourceTree = "<group>"; };
 		B985E70C29B555330042AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B909B6BD29A41BD900F68A3E /* Unison in Frameworks */,
+				B96291212ADE883300BB9032 /* SwiftCopy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				B909B6BA29A41B9400F68A3E /* Unison */,
+				B962911F2ADE882A00BB9032 /* SwiftCopy */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -245,11 +249,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				B969E25829AA704D008B2625 /* PBXTargetDependency */,
+				B96291232ADE884500BB9032 /* PBXTargetDependency */,
 			);
 			name = UnisonDemo;
 			packageProductDependencies = (
 				B909B6BC29A41BD900F68A3E /* Unison */,
+				B96291202ADE883300BB9032 /* SwiftCopy */,
 			);
 			productName = Unison;
 			productReference = B9202DA629A27EC800BCD415 /* UnisonDemo.app */;
@@ -377,9 +382,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B969E25829AA704D008B2625 /* PBXTargetDependency */ = {
+		B96291232ADE884500BB9032 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = B969E25729AA704D008B2625 /* CodeGeneratorPlugin */;
+			productRef = B96291222ADE884500BB9032 /* CodeGeneratorPlugin */;
 		};
 		B98E847D29ABC05B003A38A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -634,7 +639,11 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Unison;
 		};
-		B969E25729AA704D008B2625 /* CodeGeneratorPlugin */ = {
+		B96291202ADE883300BB9032 /* SwiftCopy */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftCopy;
+		};
+		B96291222ADE884500BB9032 /* CodeGeneratorPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "plugin:CodeGeneratorPlugin";
 		};

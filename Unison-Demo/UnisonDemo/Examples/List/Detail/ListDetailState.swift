@@ -1,7 +1,8 @@
 import Foundation
 import Unison
+import SwiftCopy
 
-struct ListDetailState: SmartCopy, Equatable {
+struct ListDetailState: Copyable, Equatable {
     let id: String
     let title: String
     let data: Loadable<ListDetail, String>
